@@ -11,7 +11,7 @@
       };
 
       colors = {
-        alpha = "0.9";
+        alpha = "1";
         foreground = "cdd6f4";
         background = "1e1e2e";
 
