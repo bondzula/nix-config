@@ -207,15 +207,16 @@ packer.startup({
       end,
     })
 
-    use({
-      generated("folke/noice.nvim"),
-      config = function()
-        require('plugins.noice')
-      end,
-      requires = {
-        generated("MunifTanjim/nui.nvim")
-      }
-    })
+    -- https://github.com/folke/noice.nvim
+    -- use({
+    --   generated("folke/noice.nvim"),
+    --   config = function()
+    --     require('plugins.noice')
+    --   end,
+    --   requires = {
+    --     generated("MunifTanjim/nui.nvim")
+    --   }
+    -- })
 
     use({
       generated("folke/trouble.nvim"),

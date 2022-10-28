@@ -1,4 +1,4 @@
-local status_ok, noice = pcall(require, 'noice.nvim')
+local status_ok, noice = pcall(require, 'noice')
 
 if not status_ok then
   return
@@ -150,7 +150,18 @@ noice.setup({
   },
   throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
   ---@type NoiceConfigViews
-  views = {}, ---@see section on views
+  views = {
+    cmdline_popup = {
+      border = {
+        style = "none",
+        padding = { 2, 3 },
+      },
+      filter_options = {},
+      win_options = {
+        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+      },
+    },
+  }, ---@see section on views
   ---@type NoiceRouteConfig[]
   routes = {}, --- @see section on routes
   ---@type table<string, NoiceFilter>
