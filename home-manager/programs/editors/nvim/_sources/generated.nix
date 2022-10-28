@@ -27,15 +27,15 @@
   };
   "'plugin-SchemaStore.nvim'" = {
     pname = "'plugin-SchemaStore.nvim'";
-    version = "0a4a5da030dc0c4bd69abd846aa87a1a4a30eb2b";
+    version = "0cd69c8a117243ac11160f7fdaa423dd95604e1f";
     src = fetchFromGitHub ({
       owner = "b0o";
       repo = "SchemaStore.nvim";
-      rev = "0a4a5da030dc0c4bd69abd846aa87a1a4a30eb2b";
+      rev = "0cd69c8a117243ac11160f7fdaa423dd95604e1f";
       fetchSubmodules = false;
-      sha256 = "sha256-LE+2SCDhRXora+eqh5PeEvN6XoIyAKKKuRKspy4UccI=";
+      sha256 = "sha256-xfBA04I2LrhD3XRaSvJaRhdxIBl2ePb6PpmXpYmMrQw=";
     });
-    date = "2022-10-27";
+    date = "2022-10-28";
   };
   "'plugin-bufdelete.nvim'" = {
     pname = "'plugin-bufdelete.nvim'";
@@ -243,13 +243,13 @@
   };
   "'plugin-noice.nvim'" = {
     pname = "'plugin-noice.nvim'";
-    version = "de1d5dc1f9446221674cee6b69b81a28b13dfa62";
+    version = "7e2e4491afb02422b26c241f9fb7f8960b51fe05";
     src = fetchFromGitHub ({
       owner = "folke";
       repo = "noice.nvim";
-      rev = "de1d5dc1f9446221674cee6b69b81a28b13dfa62";
+      rev = "7e2e4491afb02422b26c241f9fb7f8960b51fe05";
       fetchSubmodules = false;
-      sha256 = "sha256-ssTTHHcsb5ojIBpJZJdbkScGf5iRuzDZtZUpcRKJRP0=";
+      sha256 = "sha256-wocmqJKKAIW2qoRdJzo3A/G1+ALRXR9JTWpxWH+edz8=";
     });
     date = "2022-10-28";
   };
@@ -555,15 +555,15 @@
   };
   "'plugin-todo-comments.nvim'" = {
     pname = "'plugin-todo-comments.nvim'";
-    version = "41dd70e581ff4a4c3512c5e1f3d063b00f68cc16";
+    version = "530eb3a896e9eef270f00f4baafa102361afc93b";
     src = fetchFromGitHub ({
       owner = "folke";
       repo = "todo-comments.nvim";
-      rev = "41dd70e581ff4a4c3512c5e1f3d063b00f68cc16";
+      rev = "530eb3a896e9eef270f00f4baafa102361afc93b";
       fetchSubmodules = false;
-      sha256 = "sha256-97amcUq7dyXVUBUnbPrRTB/F/FECuBzJFr0KimLTKls=";
+      sha256 = "sha256-8sSPpg6G/EHVCm2bZV5LZHn/+Kxdq47IEum4oWyrYa4=";
     });
-    date = "2022-10-27";
+    date = "2022-10-28";
   };
   "'plugin-trouble.nvim'" = {
     pname = "'plugin-trouble.nvim'";
