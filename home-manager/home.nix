@@ -11,6 +11,14 @@
     homeDirectory = "/home/bondzula";
   };
 
+  # Font config
+  fonts.fontconfig.enable = true;
+
+  # Install nerd fonts
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+  ];
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
 
