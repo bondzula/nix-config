@@ -260,26 +260,26 @@ packer.startup({
     -- CMP Completion
     use({
       -- https://github.com/hrsh7th/nvim-cmp
-      {
-        generated("hrsh7th/nvim-cmp"),
-        config = function()
-          require("plugins.cmp")
-        end,
-      },
+      generated("hrsh7th/nvim-cmp"),
+      config = function()
+        require("plugins.cmp")
+      end,
 
-      -- https://github.com/hrsh7th/cmp-path
-      {
-        generated("hrsh7th/cmp-path"),
-      },
+      requires = {
+        -- https://github.com/hrsh7th/cmp-nvim-lsp
+        { generated("hrsh7th/cmp-nvim-lsp") },
 
-      -- https://github.com/hrsh7th/cmp-nvim-lsp
-      {
-        generated("hrsh7th/cmp-nvim-lsp"),
-      },
+        -- https://github.com/saadparwaiz1/cmp_luasnip
+        { generated("saadparwaiz1/cmp_luasnip") },
 
-      -- https://github.com/saadparwaiz1/cmp_luasnip
-      {
-        generated("saadparwaiz1/cmp_luasnip"),
+        -- https://github.com/hrsh7th/cmp-path
+        { generated("hrsh7th/cmp-path") },
+
+        -- https://github.com/hrsh7th/cmp-cmdline
+        { generated("hrsh7th/cmp-cmdline") },
+
+        -- https://github.com/onsails/lspkind.nvim
+        { generated("onsails/lspkind.nvim") }
       },
     })
 

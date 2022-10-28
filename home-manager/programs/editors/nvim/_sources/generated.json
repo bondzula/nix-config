@@ -79,6 +79,26 @@
         },
         "version": "e88dbe0ba5829119d8edb5fc69d3c8553e324a93"
     },
+    "'plugin-cmp-cmdline'": {
+        "cargoLocks": null,
+        "date": "2022-09-16",
+        "extract": null,
+        "name": "'plugin-cmp-cmdline'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hrsh7th",
+            "repo": "cmp-cmdline",
+            "rev": "c66c379915d68fb52ad5ad1195cdd4265a95ef1e",
+            "sha256": "sha256-IvMI9wHN1llFLpgMGwm6yr60UJ6gaWBnZaxNHXCDOwI=",
+            "type": "github"
+        },
+        "version": "c66c379915d68fb52ad5ad1195cdd4265a95ef1e"
+    },
     "'plugin-cmp-git'": {
         "cargoLocks": null,
         "date": "2021-10-29",
@@ -378,6 +398,26 @@
             "type": "github"
         },
         "version": "e46840f9f377766e856964a49d7f351de3188a38"
+    },
+    "'plugin-lspkind.nvim'": {
+        "cargoLocks": null,
+        "date": "2022-09-22",
+        "extract": null,
+        "name": "'plugin-lspkind.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "onsails",
+            "repo": "lspkind.nvim",
+            "rev": "c68b3a003483cf382428a43035079f78474cd11e",
+            "sha256": "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM=",
+            "type": "github"
+        },
+        "version": "c68b3a003483cf382428a43035079f78474cd11e"
     },
     "'plugin-lualine.nvim'": {
         "cargoLocks": null,

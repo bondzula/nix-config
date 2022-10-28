@@ -49,6 +49,18 @@
     });
     date = "2022-10-07";
   };
+  "'plugin-cmp-cmdline'" = {
+    pname = "'plugin-cmp-cmdline'";
+    version = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e";
+    src = fetchFromGitHub ({
+      owner = "hrsh7th";
+      repo = "cmp-cmdline";
+      rev = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e";
+      fetchSubmodules = false;
+      sha256 = "sha256-IvMI9wHN1llFLpgMGwm6yr60UJ6gaWBnZaxNHXCDOwI=";
+    });
+    date = "2022-09-16";
+  };
   "'plugin-cmp-git'" = {
     pname = "'plugin-cmp-git'";
     version = "169202582f900b0e189eed5153b291383bfbba47";
@@ -228,6 +240,18 @@
       sha256 = "sha256-IfIjh+FOzfI1AXT7n7zfBHLsPCeQoy6/XxWORULWu64=";
     });
     date = "2022-07-17";
+  };
+  "'plugin-lspkind.nvim'" = {
+    pname = "'plugin-lspkind.nvim'";
+    version = "c68b3a003483cf382428a43035079f78474cd11e";
+    src = fetchFromGitHub ({
+      owner = "onsails";
+      repo = "lspkind.nvim";
+      rev = "c68b3a003483cf382428a43035079f78474cd11e";
+      fetchSubmodules = false;
+      sha256 = "sha256-WwUQ+O2rIfD4yl0GFx70GsZc9nnhS7b2KWfNdaXCLmM=";
+    });
+    date = "2022-09-22";
   };
   "'plugin-lualine.nvim'" = {
     pname = "'plugin-lualine.nvim'";
