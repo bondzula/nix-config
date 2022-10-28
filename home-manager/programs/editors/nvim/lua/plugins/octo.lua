@@ -105,3 +105,9 @@ octo.setup({
     }
   }
 })
+
+vim.cmd([[highlight OctoEditable guibg=#313244]])
+vim.cmd([[highlight OctoYellowFloat guibg=#313244]])
+vim.cmd([[highlight OctoPurpleFloat guibg=#313244]])
+vim.cmd([[highlight OctoRedFloat guibg=#313244]])
+vim.cmd([[highlight OctoGreenFloat guibg=#313244]])
