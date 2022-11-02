@@ -40,6 +40,20 @@ packer.startup({
       as = "catppuccin"
     })
 
+    use({
+      generated("nvim-zh/colorful-winsep.nvim"),
+      config = function()
+        require('colorful-winsep').setup({})
+      end
+    })
+
+    use({
+      generated("narutoxy/silicon.lua"),
+      config = function()
+        require('plugins.silicon')
+      end
+    })
+
     -- Treesitter setup
     use({
       {
@@ -84,26 +98,24 @@ packer.startup({
       }
     })
 
-    -- Telescope
+    -- https://github.com/nvim-telescope/telescope.nvim
     use({
-      -- https://github.com/nvim-telescope/telescope.nvim
-      {
-        generated("nvim-telescope/telescope.nvim"),
-        config = function()
-          require("plugins.telescope")
-        end,
-      },
+      generated("nvim-telescope/telescope.nvim"),
+      config = function()
+        require("plugins.telescope")
+      end,
+      requires = {
+        -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+        {
+          generated("nvim-telescope/telescope-live-grep-args.nvim"),
+        },
 
-      -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim
-      {
-        generated("nvim-telescope/telescope-live-grep-args.nvim"),
-      },
-
-      -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
-      {
-        generated("nvim-telescope/telescope-fzf-native.nvim"),
-        run = "make",
-      },
+        -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+        {
+          generated("nvim-telescope/telescope-fzf-native.nvim"),
+          run = "make",
+        },
+      }
     })
 
     -- https://github.com/famiu/bufdelete.nvim
@@ -241,15 +253,6 @@ packer.startup({
       end,
     })
 
-    -- https://github.com/vimpostor/vim-tpipeline
-    use({
-      generated("vimpostor/vim-tpipeline"),
-      config = function()
-        vim.g.tpipeline_autoembed = 1
-        vim.g.tpipeline_cursormoved = 1
-      end
-    })
-
     -- https://github.com/mickael-menu/zk-nvim
     use({
       generated("mickael-menu/zk-nvim"),
@@ -308,14 +311,6 @@ packer.startup({
     -- https://github.com/b0o/SchemaStore.nvim
     use({
       generated("b0o/schemastore.nvim"),
-    })
-
-    -- https://github.com/ThePrimeagen/harpoon
-    use({
-      generated("ThePrimeagen/harpoon"),
-      config = function()
-        require("plugins.harpoon")
-      end,
     })
 
     -- https://github.com/norcalli/nvim-colorizer.lua
