@@ -20,5 +20,6 @@
     ./kdeconnect.nix
     ./foot.nix
     ./flameshot.nix
+    ./chromium.nix
   ];
 }
