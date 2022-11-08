@@ -14,6 +14,7 @@
     ./starship.nix
     ./yt-dlp.nix
     ./zoxide.nix
+    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
@@ -32,5 +33,6 @@
     bc
     httpie
     jq
+    silicon
   ];
 }
