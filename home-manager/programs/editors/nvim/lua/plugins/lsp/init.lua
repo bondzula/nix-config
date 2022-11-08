@@ -5,15 +5,10 @@ if not lsp_config_ok then
 end
 
 -- Servers installed using LSP installer
-local local_servers = {
+local servers = {
   "html", "cssls", "bashls", "dockerls", "emmet_ls", "gopls", "intelephense",
   "rust_analyzer", "tailwindcss", "terraformls", "tsserver", "rnix",
-  "volar"
-}
-
--- Servers installed on the systm
-local global_servers = {
-  "sumneko_lua", "ltex"
+  "volar", "sumneko_lua", "ltex"
 }
 
 local repeatable = {
@@ -22,18 +17,18 @@ local repeatable = {
 }
 
 -- Setup the servers
-for _, lsp in pairs(vim.list_extend(local_servers, global_servers)) do
+for _, lsp in pairs(servers) do
   -- use the server name, and try to require the file from the lsp directory if
   -- the file is present, add "settings" key from that file to existing table
-  local ok, config = pcall(require, "plugins.lsp.settings." .. lsp)
+  -- local ok, config = pcall(require, "plugins.lsp.settings." .. lsp)
 
-  if not ok then
-    lsp_config[lsp].setup(repeatable)
-  end
+  -- if not ok then
+  lsp_config[lsp].setup(repeatable)
+  -- end
 
-  if ok then
-    lsp_config[lsp].setup(vim.tbl_extend("keep", repeatable, config[lsp]))
-  end
+  -- if ok then
+  --   lsp_config[lsp].setup(vim.tbl_extend("keep", repeatable, config[lsp]))
+  -- end
 end
 
 -- Global LSP configuration
