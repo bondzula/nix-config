@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    prefix = "C-Space";
+    prefix = "'C-\\'";
     extraConfig = "source-file ~/.config/tmux/extra.conf";
     plugins = with pkgs; [
       {
