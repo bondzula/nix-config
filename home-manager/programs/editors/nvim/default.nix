@@ -39,6 +39,7 @@ in
     extraPackages = with pkgs; [
       # General
       wl-clipboard
+      xclip
       gcc
       tree-sitter
 
