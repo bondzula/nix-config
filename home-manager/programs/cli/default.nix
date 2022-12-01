@@ -14,6 +14,7 @@
     ./starship.nix
     ./yt-dlp.nix
     ./zoxide.nix
+    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
@@ -26,11 +27,15 @@
     ripgrep
     terraform
     awscli
+    ssm-session-manager-plugin
     nix-prefetch-github
     lazygit
+    delta
     gcc
     bc
     httpie
     jq
+    silicon
+    trash-cli
   ];
 }

@@ -18,6 +18,9 @@
       wget = "wget --hsts-file=$XDG_CACHE_HOME/wget_hsts";
     };
 
+    initExtra = "path+=('/home/bondzula/.npm-global/bin')\nexport PATH";
+    envExtra = "export DIRENV_LOG_FORMAT=\nexport XDG_CACHE_HOME=~/.cache";
+
     plugins = [
       {
         name = "zsh-autosuggestions";

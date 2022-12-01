@@ -1,4 +1,8 @@
-local Hydra = require('hydra')
+local ok, hydra = pcall(require, 'hydra')
+
+if not ok then
+  return
+end
 
 local hint = [[
                  _f_: files       _m_: marks
@@ -18,7 +22,7 @@ if not status then
   return
 end
 
-Hydra({
+hydra({
    name = 'Telescope',
    hint = hint,
    config = {

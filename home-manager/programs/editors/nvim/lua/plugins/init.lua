@@ -47,6 +47,7 @@ packer.startup({
       end
     })
 
+    -- https://github.com/narutoxy/silicon.lua
     use({
       generated("narutoxy/silicon.lua"),
       config = function()

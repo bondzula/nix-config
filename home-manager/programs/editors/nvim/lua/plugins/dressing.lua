@@ -1,5 +1,10 @@
--- https://github.com/stevearc/dressing.nvim
-require('dressing').setup({
+local ok, dressing = pcall(require, "dressing")
+
+if not ok then
+  return
+end
+
+dressing.setup({
   input = {
     -- Set to false to disable the vim.ui.input implementation
     enabled = true,

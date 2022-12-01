@@ -36,43 +36,10 @@ in
     withPython3 = true;
     withRuby = false;
 
-    plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (plugins: [
-        plugins.tree-sitter-c
-        plugins.tree-sitter-go
-        plugins.tree-sitter-vue
-        plugins.tree-sitter-vim
-        plugins.tree-sitter-tsx
-        plugins.tree-sitter-php
-        plugins.tree-sitter-lua
-        plugins.tree-sitter-hcl
-        plugins.tree-sitter-css
-        plugins.tree-sitter-cpp
-        plugins.tree-sitter-yaml
-        plugins.tree-sitter-toml
-        plugins.tree-sitter-rust
-        plugins.tree-sitter-scss
-        plugins.tree-sitter-json
-        plugins.tree-sitter-html
-        plugins.tree-sitter-bash
-        plugins.tree-sitter-latex
-        plugins.tree-sitter-jsdoc
-        plugins.tree-sitter-prisma
-        plugins.tree-sitter-haskell
-        plugins.tree-sitter-graphql
-        plugins.tree-sitter-markdown
-        plugins.tree-sitter-typescript
-        plugins.tree-sitter-javascript
-        plugins.tree-sitter-nix
-        plugins.tree-sitter-query
-      ]))
-      nvim-treesitter-textobjects
-      nvim-treesitter-refactor
-    ];
-
     extraPackages = with pkgs; [
       # General
       wl-clipboard
+      xclip
       gcc
       tree-sitter
 

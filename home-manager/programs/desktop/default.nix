@@ -14,6 +14,8 @@
     thunderbird
     gimp
     keepassxc
+    alacritty
+    qbittorrent
   ];
 
   imports = [

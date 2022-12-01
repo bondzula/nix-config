@@ -4,12 +4,14 @@ if not status_ok then
   return
 end
 
+vim.opt.runtimepath:append("$HOME/.local/share/treesitter")
+
 treesitter.setup({
-  -- parser_install_dir = "/home/bondzula/.local/share/nvim",
-  -- ensure_installed = {
-  --   "javascript", "lua", "bash", "css", "dockerfile", "go", "hcl", "html", "jsdoc", "json", "markdown", "nix", "php",
-  --   "rust", "scss", "typescript", "vue", "yaml"
-  -- },
+  parser_install_dir = "$HOME/.local/share/treesitter",
+  ensure_installed = {
+    "javascript", "lua", "bash", "css", "dockerfile", "go", "hcl", "html", "jsdoc", "json", "markdown", "markdown_inline", "nix", "php",
+    "rust", "scss", "typescript", "vue", "yaml"
+  },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
 
