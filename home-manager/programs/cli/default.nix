@@ -27,6 +27,7 @@
     ripgrep
     terraform
     awscli
+    ssm-session-manager-plugin
     nix-prefetch-github
     lazygit
     gcc
