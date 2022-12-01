@@ -30,6 +30,7 @@
     ssm-session-manager-plugin
     nix-prefetch-github
     lazygit
+    delta
     gcc
     bc
     httpie
