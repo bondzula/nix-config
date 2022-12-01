@@ -36,5 +36,6 @@
     httpie
     jq
     silicon
+    trash-cli
   ];
 }
