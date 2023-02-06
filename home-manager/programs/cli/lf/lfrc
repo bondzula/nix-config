@@ -82,12 +82,15 @@ cmd zip ${{
     rm -rf $1
 }}
 
+# Jump to a file / directory using fzf
 cmd fzf_jump ${{
-    res="$(find . -maxdepth 1 | fzf-tmux -p --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+
+    res="$(fzf --reverse --header='Find: ' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
         cmd="select"
+
     else
         exit 0
     fi
