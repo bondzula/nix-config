@@ -40,25 +40,15 @@ in
       # General
       wl-clipboard
       xclip
-      gcc
-      tree-sitter
-
-      # Lua
-      sumneko-lua-language-server
-      selene
-
-      # Nix
-      statix
-      rnix-lsp
 
       # JavaScript
-      nodePackages.prettier
-      nodePackages.eslint
       nodePackages.typescript
+      deno
 
       # Go
       go
-      gopls
+
+      lua
 
       # Rust
       cargo
@@ -66,24 +56,6 @@ in
       # PHP
       php
       php81Packages.composer
-      php81Packages.phpstan
-      nodePackages.intelephense
-
-      # Shell
-      shfmt
-      nodePackages.bash-language-server
-
-      # YAML
-      yamllint
-      ansible-lint
-      nodePackages.yaml-language-server
-
-      # Markdown
-      vale
-      ltex-ls
-
-      # Terraform
-      terraform-ls
 
       # Telescope Dependencies
       ripgrep
@@ -92,24 +64,24 @@ in
     ];
   };
 
-  xdg.configFile."nvim/init.lua".source = ./init.lua;
-  xdg.configFile."nvim/lua" = {
-    recursive = true;
-    source = ./lua;
-  };
+  # xdg.configFile."nvim/init.lua".source = ./init.lua;
+  # xdg.configFile."nvim/lua" = {
+  #   recursive = true;
+  #   source = ./lua;
+  # };
 
-  xdg.dataFile =
-    {
-      "nvim/vscode-lldb" = {
-        source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
-        recursive = true;
-      };
-    }
-    // (with lib;
-    mapAttrs'
-      (n: v:
-        nameValuePair "nvim/plugins/${n}" {
-          source = "${v}";
-        })
-      plugins);
+  # xdg.dataFile =
+  #   {
+  #     "nvim/vscode-lldb" = {
+  #       source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+  #       recursive = true;
+  #     };
+  #   }
+  #   // (with lib;
+  #   mapAttrs'
+  #     (n: v:
+  #       nameValuePair "nvim/plugins/${n}" {
+  #         source = "${v}";
+  #       })
+  #     plugins);
 }
