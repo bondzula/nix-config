@@ -35,7 +35,19 @@
     bc
     httpie
     jq
-    silicon
     trash-cli
+    cargo
+    rustc
+    fnm
+    nodePackages.pnpm
+    # lua
+    openssl
+    pkgconfig
+    libiconv
+
+    # nix helpers
+    nixfmt
+    deadnix
+    statix
   ];
 }
