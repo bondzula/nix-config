@@ -37,6 +37,7 @@ in
     withRuby = false;
 
     extraPackages = with pkgs; [
+      tree-sitter
       # General
       wl-clipboard
       xclip
@@ -44,6 +45,7 @@ in
       # JavaScript
       nodePackages.typescript
       deno
+      nodePackages.cspell
 
       # Go
       go
@@ -56,6 +58,7 @@ in
       # PHP
       php
       php81Packages.composer
+      php81Packages.phpstan
 
       # Telescope Dependencies
       ripgrep
