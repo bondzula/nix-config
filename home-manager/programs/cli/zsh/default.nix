@@ -18,9 +18,23 @@
       wget = "wget --hsts-file=$XDG_CACHE_HOME/wget_hsts";
     };
 
-    initExtraFirst = ". /home/bondzula/.nix-profile/etc/profile.d/nix.sh";
-    initExtra = "path+=('/home/bondzula/.npm-global/bin')\npath+=('/home/bondzula/.cargo/bin')\nexport PATH\neval \"$(fnm env --use-on-cd)\"";
-    envExtra = "export DIRENV_LOG_FORMAT=\nexport XDG_CACHE_HOME=~/.cache";
+    initExtra = ''
+      # Setup path
+      path+=('/home/bondzula/.npm-global/bin')
+      path+=('/home/bondzula/.cargo/bin')
+      export PATH
+
+      # Check if nix profile exists, and if it does, load it
+      if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
+
+      # Setup fnm
+      eval "$(fnm env --use-on-cd)"
+      '';
+
+    envExtra = ''
+      export DIRENV_LOG_FORMAT=
+      export XDG_CACHE_HOME=~/.cache
+    '';
 
     plugins = [
       {
