@@ -104,12 +104,15 @@
   # Enable zsh
   programs.zsh.enable = true;
 
+  # Install Docker
+  virtualisation.docker.enable = true;
+
   # Users config
   users.users = {
     bondzula = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [];
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" ];
       shell = pkgs.zsh;
     };
   };
