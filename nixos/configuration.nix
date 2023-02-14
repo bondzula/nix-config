@@ -42,6 +42,18 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+  # Enable swap on luks
+  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".device = "/dev/disk/by-uuid/f15bc937-a47e-464e-abbb-b2debd276abb";
+  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".keyFile = "/crypto_keyfile.bin";
+
+  # Fix the WiFi
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Hostname
   networking.hostName = "nixos";
 
@@ -49,7 +61,7 @@
   networking.networkmanager.enable = true;
 
   # Enables wireless support via wpa_supplicant.
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Belgrade";
@@ -63,6 +75,8 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -87,12 +101,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable zsh
+  programs.zsh.enable = true;
+
   # Users config
   users.users = {
     bondzula = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [];
       extraGroups = [ "wheel" "networkmanager" ];
+      shell = pkgs.zsh;
     };
   };
 
@@ -101,11 +119,19 @@
   services.openssh = {
     enable = true;
     # Forbid root login through SSH.
-    permitRootLogin = "no";
+    settings.PermitRootLogin = "no";
     # Use keys only. Remove if you want to SSH using password (not recommended)
-    passwordAuthentication = false;
+    settings.PasswordAuthentication = false;
   };
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "22.05";
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "22.11"; # Did you read the comment?
 }
