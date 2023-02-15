@@ -118,7 +118,16 @@
   };
 
   security.pam.services.sddm.enableKwallet = true;
-  programs.ssh.startAgent = true;
+
+  # Setup the SSH client
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = ''
+      Host *
+        ServerAliveInterval 120
+        ServerAliveCountMax 2
+    '';
+  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
