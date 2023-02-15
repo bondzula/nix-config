@@ -4,7 +4,7 @@
     ./bat
     ./lf
     ./tmux
-    ./zsh
+    ./zsh.nix
     ./btop.nix
     ./exa.nix
     ./fzf.nix
@@ -17,7 +17,10 @@
     ./direnv.nix
     ./ripgrep.nix
     ./fd.nix
+    ./playerctl.nix
     ./firefox.nix
+    ./ssh.nix
+    ./gnupg.nix
   ];
 
   home.packages = with pkgs; [
