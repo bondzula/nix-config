@@ -15,6 +15,7 @@
     ./yt-dlp.nix
     ./zoxide.nix
     ./direnv.nix
+    ./ripgrep.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,7 +25,6 @@
     ffmpeg
     imagemagick
     fd
-    ripgrep
     terraform
     awscli
     ssm-session-manager-plugin
