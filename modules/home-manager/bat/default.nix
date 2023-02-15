@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+# User configuration for bat
 
 {
   programs.bat = {
