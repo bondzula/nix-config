@@ -8,7 +8,7 @@
 
   # Aliases
   programs.zsh.initExtra = ''
-    ealias ls="exa --all --group-directories-first --across"
-    ealias ll="exa --all --group-directories-first --long"
+    alias ls="exa --all --group-directories-first --across"
+    alias ll="exa --all --group-directories-first --long"
   '';
 }
