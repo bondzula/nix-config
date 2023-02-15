@@ -12,4 +12,6 @@
     recursive = true;
     source = ./themes;
   };
+
+  programs.zsh.shellAliases = { cat = "bat"; };
 }
