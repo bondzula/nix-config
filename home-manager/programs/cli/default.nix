@@ -16,6 +16,7 @@
     ./zoxide.nix
     ./direnv.nix
     ./ripgrep.nix
+    ./fd.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,7 +25,6 @@
     unzip
     ffmpeg
     imagemagick
-    fd
     terraform
     awscli
     ssm-session-manager-plugin
