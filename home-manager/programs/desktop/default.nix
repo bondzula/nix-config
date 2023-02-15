@@ -10,7 +10,6 @@
     discord
     brave
     google-chrome
-    firefox
     thunderbird
     gimp
     keepassxc

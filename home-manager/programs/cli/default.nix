@@ -17,6 +17,7 @@
     ./direnv.nix
     ./ripgrep.nix
     ./fd.nix
+    ./firefox.nix
   ];
 
   home.packages = with pkgs; [
