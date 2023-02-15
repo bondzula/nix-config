@@ -9,9 +9,12 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Hyprland WM
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "aarch64-linux"
@@ -20,12 +23,9 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-    in
-    rec {
+    in rec {
       # Your custom packages and modifications
-      overlays = {
-        default = import ./overlay { inherit inputs; };
-      };
+      overlays = { default = import ./overlay { inherit inputs; }; };
 
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
@@ -49,21 +49,17 @@
           inherit system;
           # This adds our overlays to pkgs
           overlays = builtins.attrValues overlays;
-
-          # NOTE: Using `nixpkgs.config` in your NixOS config won't work
-          # Instead, you should set nixpkgs configs here
-          # (https://nixos.org/manual/nixpkgs/stable/#idm140737322551056)
           config.allowUnfree = true;
-        }
-      );
+        });
 
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
-            # > Our main nixos configuration file <
             ./nixos/configuration.nix
+            hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
           ];
         };
       };
@@ -71,15 +67,23 @@
       homeConfigurations = {
         "bondzula@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+          extraSpecialArgs = {
+            inherit inputs;
+          }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules) ++ [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
+
+            # Setup hyperland
+            hyprland.homeManagerModules.default
+            { wayland.windowManager.hyprland.enable = true; }
           ];
         };
         "bondzula@wsl" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
+          extraSpecialArgs = {
+            inherit inputs;
+          }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules) ++ [
             # > Our main home-manager configuration file <
             ./home-manager/wsl.nix
