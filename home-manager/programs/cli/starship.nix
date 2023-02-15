@@ -1,4 +1,6 @@
-{ config, pkgs, lib, ... }:
+# User configuration for starship
+
+{ lib, ... }:
 
 {
   programs.starship = {
