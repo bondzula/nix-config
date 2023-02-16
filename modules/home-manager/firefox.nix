@@ -1,4 +1,5 @@
 # User configuration for firefox
+{ pkgs, ...}:
 
 {
   # Set firefox as the default browser
@@ -26,6 +27,8 @@
       "browser.startup.homepage" = "about:blank";
       # Disable the Firefox View feature
       "browser.tabs.firefox-view" = false;
+      # Merge tabs and titlebar
+      "browser.tabs.inTitlebar" = 1;
       # Set the default text in the address bar to "Search with DuckDuckGo or enter address"
       "browser.urlbar.placeholderName" = "DuckDuckGo";
       # Same as the line above, but for private tabs
@@ -41,5 +44,10 @@
       # Prevent websites from requesting permission to send desktop notifications
       "permissions.default.desktop-notification" = 2;
     };
+
+    profiles.default.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      ublock-origin
+      keepassxc-browser
+    ];
   };
 }
