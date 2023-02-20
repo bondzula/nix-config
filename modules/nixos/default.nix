@@ -25,7 +25,8 @@
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
+      config.nix.registry;
   };
 
   nix = {
@@ -43,13 +44,13 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
 
   # Enable swap on luks
-  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".device = "/dev/disk/by-uuid/f15bc937-a47e-464e-abbb-b2debd276abb";
-  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".device =
+    "/dev/disk/by-uuid/f15bc937-a47e-464e-abbb-b2debd276abb";
+  boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".keyFile =
+    "/crypto_keyfile.bin";
 
   # Fix the WiFi
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -111,7 +112,7 @@
   users.users = {
     bondzula = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = [ ];
       extraGroups = [ "wheel" "networkmanager" "docker" ];
       shell = pkgs.zsh;
     };
@@ -127,6 +128,23 @@
     settings.PermitRootLogin = "no";
     # Use keys only. Remove if you want to SSH using password (not recommended)
     settings.PasswordAuthentication = false;
+  };
+
+  # Disable power-profiles-daemon
+  services.power-profiles-daemon.enable = false;
+
+  # Enable auto-cpufreq
+  # services.auto-cpufreq.enable = true;
+
+  # Enable TLP
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
+    };
   };
 
   # Allow unfree packages
