@@ -86,7 +86,7 @@
     trash-cli
     cargo
     rustc
-    fnm
+    nodejs
     nodePackages.pnpm
     gnumake
     libsForQt5.index

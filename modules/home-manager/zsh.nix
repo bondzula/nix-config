@@ -19,16 +19,18 @@
     };
 
     initExtra = ''
-      # Setup path
-      path+=('/home/bondzula/.npm-global/bin')
+      # Setup NODE
+      path+=('/home/bondzula/.npm-packages/bin')
+      export NODE_PATH="~/.npm-packages/lib/node_modules"
+
+      # Setup cargo
       path+=('/home/bondzula/.cargo/bin')
+
+      # Export path
       export PATH
 
       # Check if nix profile exists, and if it does, load it
       if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
-
-      # Setup fnm
-      eval "$(fnm env --use-on-cd)"
       '';
 
     envExtra = ''
