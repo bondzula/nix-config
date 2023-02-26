@@ -5,7 +5,7 @@
     settings = {
       main = {
 
-        font = "JetBrainsMono Nerd Font:size=11";
+        font = "JetBrainsMono Nerd Font:size=12";
       };
 
       colors = {
