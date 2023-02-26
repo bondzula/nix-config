@@ -19,6 +19,8 @@
       nodePackages.typescript
       deno
       nodePackages.cspell
+      nodejs
+      nodePackages.npm
 
       # Go
       go
