@@ -25,6 +25,7 @@
     ./bat
     ./btop.nix
     ./chromium.nix
+    ./direnv.nix
     ./exa.nix
     ./fd.nix
     ./firefox.nix
