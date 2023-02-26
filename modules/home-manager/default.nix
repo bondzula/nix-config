@@ -99,5 +99,8 @@
     nixfmt
     deadnix
     statix
+
+    cachix
+    inputs.devenv.packages.x86_64-linux.devenv
   ];
 }

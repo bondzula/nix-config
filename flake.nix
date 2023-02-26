@@ -13,6 +13,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    devenv = {
+      url = "github:cachix/devenv/latest";
+    };
   };
 
   outputs = inputs@{ nixpkgs, flake-parts, home-manager, nur, ... }:
