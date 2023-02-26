@@ -6,6 +6,9 @@
       main = {
 
         font = "JetBrainsMono Nerd Font:size=12";
+
+        # Open foot in full width
+        initial-window-mode = "maximized";
       };
 
       colors = {
