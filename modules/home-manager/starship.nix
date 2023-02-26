@@ -17,7 +17,7 @@
         "$git_metrics"
         "$git_status"
         "$package"
-        "nix_shell"
+        "$nix_shell"
       ];
     };
   };
