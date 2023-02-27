@@ -4,18 +4,11 @@
 { inputs, lib, config, pkgs, ... }: {
 
   imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware), use something like:
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # It's strongly recommended you take a look at
-    # https://github.com/nixos/nixos-hardware
-    # and import modules relevant to your hardware.
+    # Load Asus hardware module
+    inputs.hardware.nixosModules.asus-zephyrus-ga402
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-
-    # You can also split up your configuration and import pieces of it here.
   ];
 
   nix = {
@@ -61,8 +54,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enables wireless support via wpa_supplicant.
-  # networking.wireless.enable = true;
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Belgrade";
@@ -76,8 +69,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -89,18 +80,22 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  # The portal interfaces include APIs for file access, opening URIs,
+  # printing and others.
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+
+    # gtk portal needed to make gtk apps happy
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-gtk pkgs.libsForQt5.xdg-desktop-portal-kde ];
+  };
 
   # Enable zsh
   programs.zsh.enable = true;
@@ -118,8 +113,6 @@
     };
   };
 
-  security.pam.services.sddm.enableKwallet = true;
-
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
@@ -134,21 +127,7 @@
   services.power-profiles-daemon.enable = false;
 
   # Enable auto-cpufreq
-  # services.auto-cpufreq.enable = true;
-
-  # Enable TLP
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  services.auto-cpufreq.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
