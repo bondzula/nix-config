@@ -4,6 +4,9 @@
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
+    # Load hardware config for laptop
+    hardware = { url = "github:NixOS/nixos-hardware/master"; };
+
     flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
     nur = { url = "github:nix-community/NUR"; };
