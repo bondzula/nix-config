@@ -65,7 +65,7 @@
     keepassxc
     alacritty
     qbittorrent
-    inputs.nixpkgs-stable.legacyPackages.x86_64-linux.wezterm
+    wezterm
 
     mysql80
     curl
