@@ -67,6 +67,11 @@
     qbittorrent
     wezterm
 
+    # Plasma theme
+    libsForQt5.plasma-nm
+    libsForQt5.kdeplasma-addons
+    libsForQt5.plasma-pa
+
     mysql80
     curl
     wget
