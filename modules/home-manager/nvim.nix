@@ -28,9 +28,9 @@
       lua
 
       # PHP
-      php
-      php81Packages.composer
-      php81Packages.phpstan
+      php82
+      php82Packages.composer
+      php82Packages.phpstan
     ];
   };
 }
