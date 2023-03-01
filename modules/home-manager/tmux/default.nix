@@ -36,16 +36,17 @@
       set-option -g default-terminal        "screen-256color"
       set-option -g terminal-overrides      ",xterm-256color:RGB"
 
-      bind "%" split-window -c "#{pane_current_path}" -h
-      bind '"' split-window -c "#{pane_current_path}"
-      bind c   new-window   -c "#{pane_current_path}"
-      bind c   new-window   -c "#{pane_current_path}"
-      bind g   new-window   -n "" lazygit
-      bind t   run-shell    -b "~/bin/t"
-      bind h   select-pane  -L
-      bind j   select-pane  -D
-      bind k   select-pane  -U
-      bind l   select-pane  -R
+      bind "%" split-window  -c "#{pane_current_path}" -h
+      bind '"' split-window  -c "#{pane_current_path}"
+      bind c   new-window    -c "#{pane_current_path}"
+      bind c   new-window    -c "#{pane_current_path}"
+      bind g   new-window    -n "" lazygit
+      bind t   run-shell     -b "~/bin/t"
+      bind L   switch-client -l
+      bind h   select-pane   -L
+      bind j   select-pane   -D
+      bind k   select-pane   -U
+      bind l   select-pane   -R
 
       bind-key -T copy-mode-vi 'C-\' select-pane -l
       bind-key -T copy-mode-vi 'C-h' select-pane -L
