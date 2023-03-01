@@ -22,6 +22,7 @@
   home.stateVersion = "22.11";
 
   imports = [
+    ./alacritty.nix
     ./bat
     ./btop.nix
     ./chromium.nix
@@ -63,7 +64,6 @@
     thunderbird
     gimp
     keepassxc
-    alacritty
     qbittorrent
     wezterm
 
