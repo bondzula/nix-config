@@ -1,5 +1,10 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    difftastic
+    delta
+  ];
+
   programs.git = {
     enable = true;
     userName = "Stefan Bondzulic";
@@ -8,11 +13,9 @@
     extraConfig = {
       init.defaultBranch = "main";
       core.editor = "nvim";
-      core.pager = "delta";
 
-      # Delta config
-      delta.side-by-side = true;
-      delta.line-numbers = false;
+      # Difftastic
+      diff.external = "difft";
     };
   };
 }

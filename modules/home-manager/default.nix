@@ -89,7 +89,6 @@
     awscli
     ssm-session-manager-plugin
     nix-prefetch-github
-    delta
     gcc
     bc
     httpie
