@@ -1,9 +1,7 @@
 { pkgs, ... }:
+
 {
-  home.packages = with pkgs; [
-    difftastic
-    delta
-  ];
+  home.packages = with pkgs; [ difftastic delta ];
 
   programs.git = {
     enable = true;
