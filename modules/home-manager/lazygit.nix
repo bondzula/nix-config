@@ -90,7 +90,7 @@ _:
       # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
       quitOnTopLevelReturn = true;
       disableStartupPopups = false;
-      notARepository = "prompt"; # one of: 'prompt' | 'create' | 'skip'
+      notARepository = "skip"; # one of: 'prompt' | 'create' | 'skip'
       promptToReturnFromSubprocess =
         false; # display confirmation when subprocess terminates
     };
