@@ -74,7 +74,7 @@ _:
       };
       os = {
         editCommand = ""; # see 'Configuring File Editing' section
-        editCommandTemplate = "{{editor}} {{filename}}";
+        editCommandTemplate = "{{editor}} +{{line}} -- {{filename}}";
         openCommand = "";
       };
       refresher = {
