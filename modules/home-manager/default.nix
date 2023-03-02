@@ -37,6 +37,7 @@
     ./git.nix
     ./gnupg.nix
     ./kdeconnect.nix
+    ./lazygit.nix
     ./lf
     ./mpv.nix
     ./nvim.nix
@@ -88,7 +89,6 @@
     awscli
     ssm-session-manager-plugin
     nix-prefetch-github
-    lazygit
     delta
     gcc
     bc
