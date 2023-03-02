@@ -41,7 +41,10 @@ in
       statix
 
       # LSP's
+      ansible-language-server
       gopls
+      lua-language-server
+      marksman
       nil
       nodePackages.bash-language-server
       nodePackages.dockerfile-language-server-nodejs
@@ -58,16 +61,14 @@ in
       rust-analyzer
       sqls
       terraform-ls
-      lua-language-server
-      marksman
 
       # LSP's with custom node packages
-      customNodePackages."@volar/vue-language-server"
-      customNodePackages."@tailwindcss/language-server"
-      customNodePackages."stylelint-lsp"
-      customNodePackages."vscode-langservers-extracted" # eslint-ls
       customNodePackages."@astrojs/language-server"
       customNodePackages."emmet-ls"
+      customNodePackages."stylelint-lsp"
+      customNodePackages."@tailwindcss/language-server"
+      customNodePackages."@volar/vue-language-server"
+      customNodePackages."vscode-langservers-extracted" # eslint-ls
     ];
   };
 }
