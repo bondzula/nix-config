@@ -65,7 +65,6 @@
     thunderbird
     gimp
     keepassxc
-    qbittorrent
     wezterm
 
     # Catppuccin theme
