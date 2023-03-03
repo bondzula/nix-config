@@ -14,7 +14,7 @@
       # Do not show the warning when opening the `about:config` page
       "browser.aboutConfig.showWarning" = false;
       # Set the default download directory
-      "browser.download.dir" = "/home/bondzula/downloads";
+      "browser.download.dir" = "/home/bondzula/Downloads";
       # Remember and suggest the location of the most recent download before downloading a file
       "browser.download.folderList" = 2;
       # Do not automatically fill in forms
