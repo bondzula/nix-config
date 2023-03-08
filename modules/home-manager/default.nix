@@ -43,6 +43,7 @@
     ./nvim.nix
     ./playerctl.nix
     ./ripgrep.nix
+    ./scripts
     ./ssh.nix
     ./starship.nix
     ./tmux

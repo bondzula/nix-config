@@ -41,7 +41,7 @@
       bind c   new-window    -c "#{pane_current_path}"
       bind c   new-window    -c "#{pane_current_path}"
       bind g   new-window    -n "" lazygit
-      bind t   run-shell     -b "~/bin/t"
+      bind t   run-shell     -b "tmux-sessionizer"
       bind L   switch-client -l
       bind h   select-pane   -L
       bind j   select-pane   -D
