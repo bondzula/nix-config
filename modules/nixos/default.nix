@@ -68,7 +68,12 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5 = {
+    enable = true;
+    excludePackages = with pkgs.libsForQt5; [
+      konsole
+    ];
+  };
 
   # Configure keymap in X11
   services.xserver = {
