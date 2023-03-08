@@ -14,8 +14,6 @@ in
 
     extraPackages = with pkgs; [
       tree-sitter
-      # General
-      wl-clipboard
 
       # JavaScript
       nodePackages.typescript

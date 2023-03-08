@@ -68,6 +68,8 @@
     keepassxc
     wezterm
 
+    wl-clipboard
+
     mysql80
     curl
     wget
