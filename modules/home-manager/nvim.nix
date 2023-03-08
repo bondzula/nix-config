@@ -16,7 +16,6 @@ in
       tree-sitter
       # General
       wl-clipboard
-      xclip
 
       # JavaScript
       nodePackages.typescript
