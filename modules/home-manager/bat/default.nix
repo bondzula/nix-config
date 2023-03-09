@@ -12,5 +12,10 @@
     onConfigChange = "bat cache --build";
   };
 
-  programs.zsh.shellAliases = { cat = "bat"; };
+  programs.zsh = {
+    shellAliases = { cat = "bat"; };
+    envExtra = ''
+      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    '';
+  };
 }
