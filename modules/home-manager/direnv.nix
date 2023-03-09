@@ -8,4 +8,8 @@ _:
       enable = true;
     };
   };
+
+  programs.zsh.envExtra = ''
+    export DIRENV_LOG_FORMAT=""
+  '';
 }

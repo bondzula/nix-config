@@ -34,7 +34,6 @@
       '';
 
     envExtra = ''
-      export DIRENV_LOG_FORMAT=
       export XDG_CACHE_HOME=~/.cache
     '';
 
