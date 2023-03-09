@@ -1,19 +1,26 @@
 # User configuration for starship
 
-{ lib, ... }:
+_:
 
 {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
     settings = {
-      format = lib.concatStrings [
-        "$username"
-        "$hostname"
-        "$directory"
-        "$package"
-        "$nix_shell"
-      ];
+      # Disable AWS module
+      aws = { disabled = true; };
+
+      # Enable nix_shell
+      nix_shell = { 
+        symbol = "❄️";
+        format = "via [$symbol $state](bold blue)";
+      };
+
+      # Disable git modules
+      git_branch = { disabled = true; };
+      git_commit = { disabled = true; };
+      git_state = { disabled = true; };
+      git_status = { disabled = true; };
     };
   };
 }
