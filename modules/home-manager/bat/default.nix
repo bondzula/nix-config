@@ -3,7 +3,10 @@
 {
   programs.bat = {
     enable = true;
-    config = { theme = "Catppuccin-mocha"; };
+    config = {
+      theme = "Catppuccin-mocha";
+      style = "plain";
+    };
   };
 
   xdg.configFile."bat/themes" = {
