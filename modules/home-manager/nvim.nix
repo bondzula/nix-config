@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
-let 
-  customNodePackages = pkgs.callPackage ./customNodePackages {  };
-in
-{
+let customNodePackages = pkgs.callPackage ./customNodePackages { };
+in {
   programs.neovim = {
     enable = true;
     vimAlias = true;
