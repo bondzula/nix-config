@@ -9,7 +9,7 @@
   xdg.configFile."bat/themes" = {
     recursive = true;
     source = ./themes;
-    onConfigChange = "bat cache --build";
+    onChange = "bat cache --build";
   };
 
   programs.zsh = {
