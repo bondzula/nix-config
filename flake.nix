@@ -21,6 +21,7 @@
     };
 
     devenv = { url = "github:cachix/devenv/latest"; };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = inputs@{ nixpkgs, flake-parts, home-manager, nur, ... }:
