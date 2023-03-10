@@ -1,7 +1,4 @@
 # User configuration for starship
-
-_:
-
 {
   programs.starship = {
     enable = true;
@@ -11,7 +8,7 @@ _:
       aws = { disabled = true; };
 
       # Enable nix_shell
-      nix_shell = { 
+      nix_shell = {
         symbol = "❄️";
         format = "via [$symbol $state](bold blue)";
       };

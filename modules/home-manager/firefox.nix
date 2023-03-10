@@ -1,5 +1,5 @@
 # User configuration for firefox
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   # Set firefox as the default browser

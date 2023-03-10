@@ -7,7 +7,9 @@
   home.packages = [ pkgs.ripgrep ];
 
   # Set ripgrep's config path to avoid polluting the home directory
-  home.sessionVariables = { RIPGREP_CONFIG_PATH = "${config.xdg.configHome}/ripgrep/config"; };
+  home.sessionVariables = {
+    RIPGREP_CONFIG_PATH = "${config.xdg.configHome}/ripgrep/config";
+  };
 
   # Configure ripgrep
   xdg.configFile."ripgrep/config".text = ''

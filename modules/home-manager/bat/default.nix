@@ -1,5 +1,4 @@
 # User configuration for bat
-
 {
   programs.bat = {
     enable = true;

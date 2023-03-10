@@ -1,5 +1,4 @@
 # User configuration for fzf
-
 { config, ... }:
 
 {

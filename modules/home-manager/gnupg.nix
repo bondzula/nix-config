@@ -1,5 +1,4 @@
 # User configuration for GnuPG
-
 {
   programs.gpg.enable = true;
 

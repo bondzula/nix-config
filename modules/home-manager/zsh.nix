@@ -31,7 +31,7 @@
 
       # Check if nix profile exists, and if it does, load it
       if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
-      '';
+    '';
 
     envExtra = ''
       export XDG_CACHE_HOME=~/.cache

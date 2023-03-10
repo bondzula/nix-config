@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.mpv = {
     enable = true;
@@ -15,8 +13,6 @@
 
       # Subtitles
       blend-subtitles = true;
-
-      ytdl-format = "bestvideo[height<=?1440][fps<=?60][vcodec!=?vp9]+bestaudio/best";
     };
   };
 }

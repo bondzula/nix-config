@@ -1,10 +1,9 @@
 # User configuration for exa
-
 { pkgs, ... }:
 
 {
   # Install exa
-  home.packages = [ pkgs.exa ];
+  home.packages = with pkgs; [ exa ];
 
   # Aliases
   programs.zsh.initExtra = ''
