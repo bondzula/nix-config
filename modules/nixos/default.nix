@@ -102,6 +102,7 @@
 
   # Enable zsh
   programs.zsh.enable = true;
+  programs.nm-applet.enable = true;
 
   # Install Docker
   virtualisation.docker.enable = true;
