@@ -1,8 +1,6 @@
-{ pkgs, ... }:
+_:
 
 {
-  home.packages = with pkgs; [ difftastic delta ];
-
   programs.git = {
     enable = true;
     userName = "Stefan Bondzulic";
@@ -11,9 +9,9 @@
     extraConfig = {
       init.defaultBranch = "main";
       core.editor = "nvim";
-
-      # Difftastic
-      diff.external = "difft";
+      featch.prune = true;
+      pull.rebase = true;
+      merge.conflictstyle = "diff3";
     };
   };
 }
