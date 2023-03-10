@@ -50,6 +50,7 @@
     ./starship.nix
     ./swaylock.nix
     ./tmux
+    ./wallpapers
     ./waybar.nix
     ./wofi
     ./yt-dlp.nix
