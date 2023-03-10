@@ -10,6 +10,9 @@
     flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
     nur = { url = "github:nix-community/NUR"; };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
 
     # Home manager
     home-manager = {
@@ -37,7 +40,7 @@
           "bondzula@nixos" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
-              overlays = [ nur.overlay ];
+              overlays = [ nur.overlay inputs.neovim-nightly-overlay.overlay ];
               config.allowUnfree = true;
             };
             extraSpecialArgs = { inherit inputs; };
