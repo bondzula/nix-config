@@ -178,7 +178,7 @@
       # windowrule=size 960 540,bleachbit
       windowrule=animation popin,wezterm
       # autostart
-      exec-once = swww init && swww img .local/share/wallpapers/15.jpg && sleep 0.1 && notify-send "Hey $USER, Welcome back" && waybar &&  mako && nm-applet --indicator &
+      exec-once = swww init && swww img .local/share/wallpapers/4.png && notify-send "Hey $USER, Welcome back" && waybar &&  mako && nm-applet --indicator &
       # exec-once = dbus-hyprland-environment &
     '';
   };
