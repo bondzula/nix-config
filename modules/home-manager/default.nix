@@ -30,7 +30,6 @@
     ./exa.nix
     ./fd.nix
     ./firefox.nix
-    ./flameshot.nix
     ./foot.nix
     ./fzf.nix
     ./gh.nix
