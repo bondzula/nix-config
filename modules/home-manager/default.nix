@@ -22,6 +22,7 @@
   home.stateVersion = "22.11";
 
   imports = [
+    ./nm-applet.nix
     ./alacritty.nix
     ./bat
     ./btop.nix
