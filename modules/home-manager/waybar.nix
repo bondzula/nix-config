@@ -23,7 +23,7 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 8px;
-        border: 2px solid #7EA398;
+        border: 0 solid #7EA398;
         border-radius: 0px;
         background-color: rgb(30, 30, 46);
       }
