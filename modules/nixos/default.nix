@@ -46,7 +46,7 @@
     "/crypto_keyfile.bin";
 
   # Fix the WiFi
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_2;
 
   # Hostname
   networking.hostName = "nixos";
