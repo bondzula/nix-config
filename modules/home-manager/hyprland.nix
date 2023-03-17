@@ -4,9 +4,11 @@
   imports = [ inputs.hyprland.homeManagerModules.default ];
 
   home.packages = with pkgs;[
+    wlr-randr
+    swww
+
     wofi
     wlogout
-    swww
     wlogout
     grim
     slurp
@@ -25,7 +27,7 @@
     systemdIntegration = true;
     extraConfig = ''
       $mainMod = SUPER
-      monitor=,preferred,auto,1
+      monitor=eDP-2,2560x1600@60,0x0,1.30
       input {
         kb_layout=us 
         follow_mouse=1
@@ -35,11 +37,9 @@
         disable_splash_rendering = true
       }
       general {
-        gaps_in = 8
-        gaps_out = 10
-        border_size = 1
-        col.active_border = rgba(83A598ff)
-        col.inactive_border = rgba(1D2021ff)
+        gaps_in = 10
+        gaps_out = 20
+        border_size = 0
         layout = dwindle # master|dwindle
       }
       dwindle {
@@ -58,11 +58,12 @@
         no_gaps_when_only = false
       }
       decoration {
-        active_opacity = 0.98
-        inactive_opacity = 0.96
+        rounding = 50
+        active_opacity = 1.0
+        inactive_opacity = 0.90
         fullscreen_opacity = 1.0
         rounding = 0
-        blur = yes
+        blur = false
         blur_size = 2
         blur_passes = 1
         blur_new_optimizations = true
@@ -70,6 +71,8 @@
         shadow_range = 4
         shadow_render_power = 3
         col.shadow = rgba(1a1a1aee)
+        dim_inactive = true
+        dim_strength = 0.15
       }
       animations {
         enabled=1
@@ -86,7 +89,7 @@
       bind = $mainMod, Q, killactive,
       bind = $mainMod, F, fullscreen,
       bind = $mainMod, Space, togglefloating,
-      bind = $mainMod, Z, exec, pkill wofi || wofi --show drun
+      bind = $mainMod, D, exec, pkill wofi || wofi --show drun
       bind = $mainMod, X, exec, pkill wlogout || wlogout
       bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
       bind = $mainMod, P, pseudo,
@@ -153,32 +156,17 @@
       bindm = $mainMod, mouse:273, resizewindow
       bind = $mainMod, mouse_down, workspace, e-1
       bind = $mainMod, mouse_up, workspace, e+1
-      windowrule=float,zoom-us
       windowrule=float,wlogout
       windowrule=noanim,^(wlogout)$
-      windowrule=float,Zoom-us
-      windowrule=float,title:^(zoom)$
       windowrule=float,title:^(Picture-in-Picture)$
-      # windowrule=size 960 540,title:^(Picture-in-Picture)$
-      # windowrule=move 25%-,title:^(Picture-in-Picture)$
-      windowrule=float,imv
-      windowrule=move 25%-,imv
-      windowrule=size 960 540,imv
       windowrule=float,mpv
       windowrule=move 25%-,mpv
       windowrule=size 960 540,mpv
-      # windowrule=float,thunar
-      # windowrule=move 25%-,thunar
-      # windowrule=size 960 540,thunar
-      windowrule=float,pavucontrol
-      windowrule=move 25%-,pavucontrol
-      windowrule=size 960 540,pavucontrol
-      windowrule=float,bleachbit
-      # windowrule=move 25%-,bleachbit
-      # windowrule=size 960 540,bleachbit
       windowrule=animation popin,wezterm
+
       # autostart
-      exec-once = swww init && swww img .local/share/wallpapers/4.png && notify-send "Hey $USER, Welcome back" && waybar &&  mako && nm-applet --indicator &
+      exec-once = waybar &
+      exec-once = swww init && swww img ~/.local/share/wallpapers/4.png &
       # exec-once = dbus-hyprland-environment &
     '';
   };

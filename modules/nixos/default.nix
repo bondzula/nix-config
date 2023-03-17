@@ -64,14 +64,19 @@
   i18n.defaultLocale = "en_US.utf8";
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      startx.enable = true;
+    };
+  };
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5 = {
-    enable = true;
-    excludePackages = with pkgs.libsForQt5; [ konsole ];
-  };
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5 = {
+  #   enable = true;
+  #   excludePackages = with pkgs.libsForQt5; [ konsole ];
+  # };
 
   # Configure keymap in X11
   services.xserver = {
@@ -118,6 +123,7 @@
 
   # Fix the issue of password not working
   security.pam.services.swaylock = { };
+
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
