@@ -45,7 +45,7 @@
   boot.initrd.luks.devices."luks-f15bc937-a47e-464e-abbb-b2debd276abb".keyFile =
     "/crypto_keyfile.bin";
 
-  # Fix the WiFi
+  # Custom kernel version
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_2;
 
   # Hostname
@@ -53,6 +53,20 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPortRanges = [{
+      from = 1714;
+      to = 1764;
+    } # KDE Connect
+      ];
+    allowedUDPPortRanges = [{
+      from = 1714;
+      to = 1764;
+    } # KDE Connect
+      ];
+  };
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -66,9 +80,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    displayManager = {
-      startx.enable = true;
-    };
+    displayManager = { startx.enable = true; };
   };
 
   # Enable the KDE Plasma Desktop Environment.
