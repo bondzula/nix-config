@@ -5,7 +5,7 @@
 
   home.packages = with pkgs;[
     wlr-randr
-    swww
+    hyprpaper
 
     wofi
     wlogout
@@ -27,7 +27,8 @@
     systemdIntegration = true;
     extraConfig = ''
       $mainMod = SUPER
-      monitor=eDP-2,2560x1600@60,0x0,1.30
+
+      monitor=eDP-2,2560x1600@120,0x0,1.4
       input {
         kb_layout=us 
         follow_mouse=1
@@ -166,7 +167,7 @@
 
       # autostart
       exec-once = waybar &
-      exec-once = swww init && swww img ~/.local/share/wallpapers/4.png &
+      exec-once = hyprpaper &
       # exec-once = dbus-hyprland-environment &
     '';
   };
