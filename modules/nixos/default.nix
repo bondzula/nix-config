@@ -148,10 +148,7 @@
   };
 
   # Disable power-profiles-daemon
-  services.power-profiles-daemon.enable = false;
-
-  # Enable auto-cpufreq
-  services.auto-cpufreq.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
