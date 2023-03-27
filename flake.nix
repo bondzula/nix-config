@@ -12,9 +12,6 @@
 
     # For now only used for firefox plugins
     nur = { url = "github:nix-community/NUR"; };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
 
     # Home manager
     home-manager = {
