@@ -48,10 +48,10 @@
     ./ssh.nix
     ./starship.nix
     ./swaylock.nix
-    ./tmux
     ./wallpapers
     ./waybar.nix
     ./wofi
+    ./tmux.nix
     ./yt-dlp.nix
     ./zoxide.nix
     ./zsh.nix
