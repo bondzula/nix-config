@@ -58,7 +58,6 @@
     obsidian
     obs-studio
     signal-desktop
-    discord
     brave
     google-chrome
     thunderbird
