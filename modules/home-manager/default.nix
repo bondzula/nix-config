@@ -48,7 +48,6 @@
     ./ssh.nix
     ./starship.nix
     ./swaylock.nix
-    ./wallpapers
     ./waybar.nix
     ./wofi
     ./tmux.nix
