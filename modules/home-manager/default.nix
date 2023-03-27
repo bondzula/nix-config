@@ -35,11 +35,9 @@
     ./gh.nix
     ./git.nix
     ./gnupg.nix
-    ./hyprland.nix
     ./kdeconnect.nix
     ./lazygit.nix
     ./lf
-    ./mako.nix
     ./mpv.nix
     ./nvim.nix
     ./playerctl.nix
@@ -47,9 +45,6 @@
     ./scripts
     ./ssh.nix
     ./starship.nix
-    ./swaylock.nix
-    ./waybar.nix
-    ./wofi
     ./tmux.nix
     ./yt-dlp.nix
     ./zoxide.nix

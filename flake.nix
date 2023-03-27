@@ -7,8 +7,10 @@
     # Load hardware config for laptop
     hardware = { url = "github:NixOS/nixos-hardware/master"; };
 
+    # Flake helpers
     flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
+    # For now only used for firefox plugins
     nur = { url = "github:nix-community/NUR"; };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -21,7 +23,6 @@
     };
 
     devenv = { url = "github:cachix/devenv/latest"; };
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = inputs@{ nixpkgs, flake-parts, home-manager, nur, ... }:
