@@ -39,7 +39,7 @@
           "bondzula@nixos" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
-              overlays = [ nur.overlay inputs.neovim-nightly-overlay.overlay ];
+              overlays = [ nur.overlay ];
               config.allowUnfree = true;
             };
             extraSpecialArgs = { inherit inputs; };
