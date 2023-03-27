@@ -57,7 +57,6 @@
     _1password-gui
     obsidian
     obs-studio
-    skypeforlinux
     signal-desktop
     discord
     brave
