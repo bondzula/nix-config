@@ -78,17 +78,18 @@
   i18n.defaultLocale = "en_US.utf8";
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    displayManager = { startx.enable = true; };
-  };
+  services.xserver.enable = true;
+  services.xserver.dpi = 1;
 
   # Enable the KDE Plasma Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5 = {
-  #   enable = true;
-  #   excludePackages = with pkgs.libsForQt5; [ konsole ];
-  # };
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.autoLogin.user = "bondzula";
+
+  services.xserver.desktopManager.plasma5 = {
+    enable = true;
+  };
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [ konsole ];
 
   # Configure keymap in X11
   services.xserver = {
