@@ -52,6 +52,7 @@
   ];
 
   home.packages = with pkgs; [
+    pciutils
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
 
     _1password-gui
@@ -64,6 +65,8 @@
     gimp
     keepassxc
     wezterm
+    microsoft-edge
+    nmap
 
     wl-clipboard
 
@@ -87,6 +90,7 @@
     nodejs
     nodePackages.pnpm
     gnumake
+    libsForQt5.bismuth
     libsForQt5.index
     # lua
     openssl

@@ -82,14 +82,14 @@
   services.xserver.dpi = 1;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
-  services.xserver.displayManager.autoLogin.user = "bondzula";
+  # services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.defaultSession = "plasmawayland";
+  # services.xserver.displayManager.autoLogin.user = "bondzula";
 
-  services.xserver.desktopManager.plasma5 = {
-    enable = true;
-  };
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [ konsole ];
+  # services.xserver.desktopManager.plasma5 = { enable = true; };
+  # environment.plasma5.excludePackages = with pkgs.libsForQt5; [ konsole ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -105,6 +105,7 @@
   };
 
   # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -118,8 +119,8 @@
     enable = true;
 
     # gtk portal needed to make gtk apps happy
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-gtk pkgs.libsForQt5.xdg-desktop-portal-kde ];
+    # extraPortals =
+    #   [ pkgs.xdg-desktop-portal-gtk pkgs.libsForQt5.xdg-desktop-portal-kde ];
   };
 
   # Enable zsh
