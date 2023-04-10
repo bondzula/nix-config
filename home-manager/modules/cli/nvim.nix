@@ -11,6 +11,8 @@
 
     extraPackages = with pkgs; [
       tree-sitter
+      cargo
+      rustup
 
       # JavaScript
       nodejs
