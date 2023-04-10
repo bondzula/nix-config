@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,37 +15,9 @@
   # release notes.
   home.stateVersion = "22.11";
 
-  imports = [ ./modules/cli ./modules/desktop ];
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = with pkgs; [
-    bitwarden
-    keepassxc
-    wezterm
-    nixpkgs-fmt
-    mysql80
-    bc
-    curl
-    wget
-    unzip
-    ffmpeg
-    imagemagick
-    terraform
-    awscli
-    ssm-session-manager-plugin
-    httpie
-    jq
-    trash-cli
-    cargo
-    rustc
-    nodejs
-    nodePackages.pnpm
-    gnumake
-    gcc
-
-    # Required for VS Code SSH
-    vscode
+  imports = [
+    ./modules/cli
+    ./modules/desktop
   ];
 
   # Let Home Manager install and manage itself.
