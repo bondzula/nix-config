@@ -7,6 +7,7 @@
     ./mpv.nix
     ./playerctl.nix
     ./yt-dlp.nix
+    ./wezterm
   ];
 
   home.packages = with pkgs; [
