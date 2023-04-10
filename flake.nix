@@ -29,8 +29,12 @@
 
       flake = {
         nixosConfigurations = {
-          nixos = nixpkgs.lib.nixosSystem {
-            modules = [ ./modules/nixos ];
+          # nixos = nixpkgs.lib.nixosSystem {
+          #   modules = [ ./modules/nixos ];
+          #   specialArgs = { inherit inputs; };
+          # };
+          "G14" = nixpkgs.lib.nixosSystem {
+            modules = [ ./nixos/G14 ];
             specialArgs = { inherit inputs; };
           };
         };
