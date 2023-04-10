@@ -22,10 +22,7 @@ config.window_background_opacity = 0.9
 config.window_decorations = "NONE"
 
 -- TODO:
---  - new window
---  - new window with a command (lazygit, lf)
 --  - new workspace
---  - switch between windows
 --  - switch between workspaces
 -- Keybinds
 config.leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 1000 }
