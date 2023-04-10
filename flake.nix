@@ -29,10 +29,6 @@
 
       flake = {
         nixosConfigurations = {
-          # nixos = nixpkgs.lib.nixosSystem {
-          #   modules = [ ./modules/nixos ];
-          #   specialArgs = { inherit inputs; };
-          # };
           "G14" = nixpkgs.lib.nixosSystem {
             modules = [ ./nixos/G14 ];
             specialArgs = { inherit inputs; };
@@ -40,14 +36,14 @@
         };
 
         homeConfigurations = {
-          "bondzula@nixos" = home-manager.lib.homeManagerConfiguration {
+          "bondzula@G14" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
               overlays = [ nur.overlay ];
               config.allowUnfree = true;
             };
             extraSpecialArgs = { inherit inputs; };
-            modules = [ ./modules/home-manager ];
+            modules = [ ./home-manager/g14.nix ];
           };
         };
       };

@@ -10,5 +10,7 @@
     defaultCacheTtl = 14400; # number of seconds
     # Cache the SSH key for 4 hours
     defaultCacheTtlSsh = 14400; # number of seconds
+    # Set the pinentry package
+    pinentryFlavor = "tty";
   };
 }

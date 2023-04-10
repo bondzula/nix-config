@@ -1,5 +1,4 @@
 # User configuration for ssh
-
 {
   programs.ssh = {
     enable = true;

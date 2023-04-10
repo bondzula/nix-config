@@ -1,8 +1,0 @@
-[
-  "@astrojs/language-server",
-  "emmet-ls",
-  "stylelint-lsp",
-  "@tailwindcss/language-server",
-  "@volar/vue-language-server",
-  "vscode-langservers-extracted"
-]
