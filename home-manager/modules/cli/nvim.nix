@@ -30,4 +30,7 @@
       statix
     ];
   };
+
+  # Set default editor to be nvim
+  home.sessionVariables = { EDITOR = "nvim"; };
 }
