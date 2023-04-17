@@ -1,10 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   imports = [
     ./bat
-    ./lf
-    ./scripts
     ./btop.nix
     ./direnv.nix
     ./exa.nix
@@ -14,11 +12,14 @@
     ./git.nix
     ./gnupg.nix
     ./lazygit.nix
+    ./lf
     ./nvim.nix
     ./ripgrep.nix
+    ./scripts
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
+    ./yt-dlp.nix
     ./zoxide.nix
     ./zsh.nix
   ];

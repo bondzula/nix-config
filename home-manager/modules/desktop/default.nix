@@ -6,7 +6,6 @@
     ./kdeconnect.nix
     ./mpv.nix
     ./playerctl.nix
-    ./yt-dlp.nix
     ./wezterm
   ];
 
