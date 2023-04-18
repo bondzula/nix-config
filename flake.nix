@@ -36,7 +36,7 @@
         };
 
         homeConfigurations = {
-          "bondzula@G14" = home-manager.lib.homeManagerConfiguration {
+          "bondzula@archlinux" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
               overlays = [ nur.overlay ];
