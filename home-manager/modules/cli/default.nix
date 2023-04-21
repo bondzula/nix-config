@@ -39,8 +39,6 @@
     httpie
     jq
     trash-cli
-    cargo
-    rustc
     nodejs
     nodePackages.pnpm
     gnumake
