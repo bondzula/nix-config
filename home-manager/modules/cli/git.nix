@@ -10,6 +10,7 @@
       featch.prune = true;
       pull.rebase = true;
       merge.conflictstyle = "diff3";
+      diff.external = "difft";
     };
   };
 }

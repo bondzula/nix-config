@@ -29,6 +29,7 @@
 
   home.packages = with pkgs; [
     zf
+    difftastic
     zellij
     atuin
     mlocate
