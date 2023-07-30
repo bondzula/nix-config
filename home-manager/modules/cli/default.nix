@@ -20,31 +20,36 @@
     ./starship.nix
     ./tmux.nix
     ./yt-dlp.nix
+    ./zellij.nix
     ./zoxide.nix
     ./zsh.nix
+    # ./php.nix
+    ../desktop/wezterm
   ];
 
   home.packages = with pkgs; [
-    nixpkgs-fmt
-    mysql80
+    zf
+    zellij
+    atuin
+    mlocate
+    wl-clipboard
+    # mysql80
     bc
     curl
     wget
     unzip
-    ffmpeg
     imagemagick
     terraform
-    awscli
+    awscli2
     ssm-session-manager-plugin
     httpie
     jq
     trash-cli
-    nodejs
     nodePackages.pnpm
     gnumake
     gcc
 
-    # Required for VS Code SSH
-    vscode
+    flyctl
+    supabase-cli
   ];
 }

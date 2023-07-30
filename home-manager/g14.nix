@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,7 +17,8 @@
 
   imports = [
     ./modules/cli
-    ./modules/desktop
+    ./modules/desktop/wezterm
+    # ./modules/desktop
   ];
 
   # Let Home Manager install and manage itself.

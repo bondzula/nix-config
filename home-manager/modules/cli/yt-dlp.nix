@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ ffmpeg brotli ];
+  home.packages = with pkgs; [ brotli ];
 
   programs.yt-dlp = {
     enable = true;

@@ -1,9 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Install gitmux
-  home.packages = with pkgs; [ gitmux ];
-
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -19,6 +16,7 @@
       set -g history-limit 1000000  # significantly increase history size
       set -g renumber-windows on    # renumber all windows when any window is closed
       set -g set-clipboard on       # use system clipboard
+      set -g status off
       set -g status-interval 2      # update status every 2 seconds
       set -g status-left-length 200 # increase status line length
       set -g status-position top    # macOS / darwin style
@@ -55,40 +53,6 @@
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'v'   send-keys -X begin-selection
       bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt (cmd+w)
-    '';
-    plugins = with pkgs; [ tmuxPlugins.fzf-tmux-url ];
-  };
-
-  # Setup the configuration file for gitmux
-  xdg.configFile."tmux/gitmux.yml" = {
-    text = ''
-      tmux:
-        symbols:
-          branch: " שׂ "
-          hashprefix: ":"
-          ahead: " "
-          behind: " "
-          staged: "都"
-          conflict: "繁"
-          untracked: " "
-          modified: " "
-          stashed: " "
-          clean: ""
-          insertions: " "
-          deletions: " "
-        styles:
-          state: "#[fg=red,nobold]"
-          branch: "#[fg=white,nobold]"
-          staged: "#[fg=green,nobold]"
-          conflict: "#[fg=red,nobold]"
-          modified: "#[fg=yellow,nobold]"
-          untracked: "#[fg=gray,nobold]"
-          stashed: "#[fg=gray,nobold]"
-          clean: "#[fg=green,nobold]"
-          divergence: "#[fg=cyan,nobold]"
-        layout: [branch, divergence, " ", flags, " ", stats, " "]
-        options:
-          branch_max_len: 0
     '';
   };
 }

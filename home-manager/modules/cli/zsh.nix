@@ -22,19 +22,32 @@
       # Setup NODE
       path+=('/home/bondzula/.npm-packages/bin')
       export NODE_PATH="~/.npm-packages/lib/node_modules"
+      # export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/
+
+      # setup fly.io
+      export FLYCTL_INSTALL="/home/bondzula/.fly"
+      path+=('/home/bondzula/.fly/bin')
 
       # Setup cargo
       path+=('/home/bondzula/.cargo/bin')
+
+      # fnm
+      path+=("/home/bondzula/.local/share/fnm")
+      eval "`fnm env`"
 
       # Export path
       export PATH
 
       # Check if nix profile exists, and if it does, load it
       if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
+
+      # Setup atuin
+      eval "$(atuin init zsh)"
     '';
 
     envExtra = ''
       export XDG_CACHE_HOME=~/.cache
+      export HISTFILE=~/.local/share/zsh/zsh_history
     '';
 
     plugins = [

@@ -20,6 +20,5 @@
     obsidian
     obs-studio
     signal-desktop
-    wl-clipboard
   ];
 }

@@ -20,9 +20,11 @@
     };
 
     devenv = { url = "github:cachix/devenv/latest"; };
+
+    neovim-nightly-overlay = { url = "github:nix-community/neovim-nightly-overlay"; };
   };
 
-  outputs = inputs@{ nixpkgs, flake-parts, home-manager, nur, ... }:
+  outputs = inputs@{ nixpkgs, flake-parts, home-manager, nur, neovim-nightly-overlay, ... }:
 
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-darwin" ];
@@ -36,10 +38,10 @@
         };
 
         homeConfigurations = {
-          "bondzula@archlinux" = home-manager.lib.homeManagerConfiguration {
+          "bondzula" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
-              overlays = [ nur.overlay ];
+              overlays = [ nur.overlay neovim-nightly-overlay.overlay ];
               config.allowUnfree = true;
             };
             extraSpecialArgs = { inherit inputs; };
