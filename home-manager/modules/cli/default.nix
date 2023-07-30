@@ -20,7 +20,7 @@
     ./starship.nix
     ./tmux.nix
     ./yt-dlp.nix
-    ./zellij.nix
+    ./zellij
     ./zoxide.nix
     ./zsh.nix
     # ./php.nix

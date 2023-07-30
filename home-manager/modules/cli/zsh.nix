@@ -43,6 +43,9 @@
 
       # Setup atuin
       eval "$(atuin init zsh)"
+
+      # Setup zellij
+      eval "$(zellij setup --generate-auto-start zsh)"
     '';
 
     envExtra = ''
