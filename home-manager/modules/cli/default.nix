@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./atuin
     ./bat
     ./btop.nix
     ./direnv.nix
@@ -30,8 +31,6 @@
   home.packages = with pkgs; [
     zf
     difftastic
-    zellij
-    atuin
     mlocate
     wl-clipboard
     # mysql80
