@@ -30,7 +30,7 @@
 
       # Rust
       cargo
-      rustup
+      rustc
 
       # Go
       go
