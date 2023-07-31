@@ -22,6 +22,7 @@
     outputs.hmModules.direnv
     outputs.hmModules.exa
     outputs.hmModules.fd
+    outputs.hmModules.fonts
     outputs.hmModules.fzf
     outputs.hmModules.gh
     outputs.hmModules.git
@@ -59,7 +60,5 @@
     supabase-cli # TODO: Move to project specific
     bitwarden
     firefox
-
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 }
