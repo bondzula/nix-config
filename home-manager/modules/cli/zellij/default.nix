@@ -6,5 +6,7 @@
     source = ./config.kdl;
   };
 
-# TODO: Layout
+  xdg.configFile."zellij/layouts/custom-default.kdl" = {
+    source = ./layouts/custom-default.kdl;
+  };
 }

@@ -139,7 +139,7 @@ keybinds clear-defaults=true {
     bind "Alt m" { SwitchToMode "Move"; }
   }
 }
-
+default_layout "custom-default"
 pane_frames false
 theme "catppuccin-mocha"
 copy_command "wl-copy"
