@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.git = {
     enable = true;
@@ -13,4 +15,8 @@
       diff.external = "difft";
     };
   };
+
+  home.packages = with pkgs; [
+    difftastic
+  ];
 }
