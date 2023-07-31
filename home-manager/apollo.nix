@@ -23,6 +23,7 @@
     outputs.hmModules.direnv
     outputs.hmModules.exa
     outputs.hmModules.fd
+    outputs.hmModules.firefox
     outputs.hmModules.fonts
     outputs.hmModules.fzf
     outputs.hmModules.gh
@@ -60,7 +61,6 @@
     flyctl # TODO: Move to project specific
     supabase-cli # TODO: Move to project specific
     bitwarden
-    firefox
   ];
 
   # Set default browser

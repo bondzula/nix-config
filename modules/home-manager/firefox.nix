@@ -44,10 +44,5 @@
       # Prevent websites from requesting permission to send desktop notifications
       "permissions.default.desktop-notification" = 2;
     };
-
-    # profiles.default.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    #   ublock-origin
-    #   keepassxc-browser
-    # ];
   };
 }
