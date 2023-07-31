@@ -19,6 +19,7 @@
     outputs.hmModules.atuin
     outputs.hmModules.bat
     outputs.hmModules.btop
+    outputs.hmModules.chromium
     outputs.hmModules.direnv
     outputs.hmModules.exa
     outputs.hmModules.fd
@@ -61,4 +62,9 @@
     bitwarden
     firefox
   ];
+
+  # Set default browser
+  home.sessionVariables = {
+    BROWSER = "chromium";
+  };
 }
