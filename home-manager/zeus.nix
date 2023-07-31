@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, outputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,9 +16,28 @@
   home.stateVersion = "23.05";
 
   imports = [
-    ./modules/cli
-    ./modules/desktop/wezterm
-    # ./modules/desktop
+    outputs.hmModules.atuin
+    outputs.hmModules.bat
+    outputs.hmModules.btop
+    outputs.hmModules.direnv
+    outputs.hmModules.exa
+    outputs.hmModules.fd
+    outputs.hmModules.fzf
+    outputs.hmModules.gh
+    outputs.hmModules.git
+    outputs.hmModules.gnupg
+    outputs.hmModules.lazygit
+    outputs.hmModules.lf
+    outputs.hmModules.nvim
+    outputs.hmModules.php
+    outputs.hmModules.ripgrep
+    outputs.hmModules.ssh
+    outputs.hmModules.starship
+    outputs.hmModules.tmux
+    outputs.hmModules.yt-dlp
+    outputs.hmModules.zellij
+    outputs.hmModules.zoxide
+    outputs.hmModules.zsh
   ];
 
   # Let Home Manager install and manage itself.

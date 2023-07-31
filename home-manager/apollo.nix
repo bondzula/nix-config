@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, outputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,24 +16,24 @@
   home.stateVersion = "23.05";
 
   imports = [
-    ./modules/cli/atuin.nix
-    ./modules/cli/bat
-    ./modules/cli/btop.nix
-    ./modules/cli/direnv.nix
-    ./modules/cli/exa.nix
-    ./modules/cli/fd.nix
-    ./modules/cli/fzf.nix
-    ./modules/cli/gh.nix
-    ./modules/cli/git.nix
-    ./modules/cli/gnupg.nix
-    ./modules/cli/nvim.nix
-    ./modules/cli/ripgrep.nix
-    ./modules/cli/ssh.nix
-    ./modules/cli/starship.nix
-    ./modules/cli/yt-dlp.nix
-    ./modules/cli/zellij
-    ./modules/cli/zoxide.nix
-    ./modules/cli/zsh.nix
+    outputs.hmModules.atuin
+    outputs.hmModules.bat
+    outputs.hmModules.btop
+    outputs.hmModules.direnv
+    outputs.hmModules.exa
+    outputs.hmModules.fd
+    outputs.hmModules.fzf
+    outputs.hmModules.gh
+    outputs.hmModules.git
+    outputs.hmModules.gnupg
+    outputs.hmModules.nvim
+    outputs.hmModules.ripgrep
+    outputs.hmModules.ssh
+    outputs.hmModules.starship
+    outputs.hmModules.yt-dlp
+    outputs.hmModules.zellij
+    outputs.hmModules.zoxide
+    outputs.hmModules.zsh
 
     ./modules/desktop/default.nix
   ];
