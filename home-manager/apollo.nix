@@ -34,8 +34,6 @@
     outputs.hmModules.zellij
     outputs.hmModules.zoxide
     outputs.hmModules.zsh
-
-    ./modules/desktop/default.nix
   ];
 
   # Let Home Manager install and manage itself.
