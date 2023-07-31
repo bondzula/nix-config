@@ -2,7 +2,6 @@
   inputs = {
     # Nixpkgs
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    nixpkgs-stable = { url = "github:nixos/nixpkgs/nixos-22.11"; };
 
     # Load hardware config for laptop
     hardware = { url = "github:NixOS/nixos-hardware/master"; };
@@ -35,9 +34,22 @@
             modules = [ ./nixos/G14 ];
             specialArgs = { inherit inputs; };
           };
+          "apollo" = nixpkgs.lib.nixosSystem {
+            modules = [ ./nixos/apollo ];
+            specialArgs = { inherit inputs; };
+          };
         };
 
         homeConfigurations = {
+          "bondzula@apollo" = home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs {
+              system = "x86_64-linux";
+              overlays = [ nur.overlay neovim-nightly-overlay.overlay ];
+              config.allowUnfree = true;
+            };
+            extraSpecialArgs = { inherit inputs; };
+            modules = [ ./home-manager/apollo.nix ];
+          };
           "bondzula" = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               system = "x86_64-linux";
