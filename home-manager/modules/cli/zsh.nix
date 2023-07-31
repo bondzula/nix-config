@@ -42,9 +42,6 @@
 
       # Export path
       export PATH
-
-      # Setup zellij
-      eval "$(zellij setup --generate-auto-start zsh)"
     '';
 
     envExtra = ''

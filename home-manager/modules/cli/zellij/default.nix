@@ -1,5 +1,8 @@
 {
-  programs.zellij.enable = true;
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   # config file
   xdg.configFile."zellij/config.kdl" = {
