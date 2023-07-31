@@ -18,6 +18,11 @@
       wget = "wget --hsts-file=$XDG_CACHE_HOME/wget_hsts";
     };
 
+    initExtraFirst = ''
+      # Check if nix profile exists, and if it does, load it
+      if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
+    '';
+
     initExtra = ''
       # Setup NODE
       path+=('/home/bondzula/.npm-packages/bin')
@@ -37,12 +42,6 @@
 
       # Export path
       export PATH
-
-      # Check if nix profile exists, and if it does, load it
-      if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
-
-      # Setup atuin
-      eval "$(atuin init zsh)"
 
       # Setup zellij
       eval "$(zellij setup --generate-auto-start zsh)"

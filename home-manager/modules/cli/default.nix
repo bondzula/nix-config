@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./atuin
+    ./atuin.nix
     ./bat
     ./btop.nix
     ./direnv.nix
