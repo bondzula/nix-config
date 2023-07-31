@@ -10,6 +10,11 @@
     withRuby = false;
 
     extraPackages = with pkgs; [
+      unzip
+      wget
+      gcc
+      wl-clipboard
+
       tree-sitter
       languagetool-rust
 

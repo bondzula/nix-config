@@ -2,23 +2,23 @@
 
 {
   imports = [
-    ./chromium.nix
-    ./kdeconnect.nix
-    ./mpv.nix
-    ./playerctl.nix
-    ./wezterm
+    ./foot.nix
+    # ./chromium.nix
+    # ./kdeconnect.nix
+    # ./mpv.nix
+    # ./playerctl.nix
   ];
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
 
     bitwarden
-    brave
+    # brave
     firefox
-    google-chrome
-    keepassxc
+    # google-chrome
+    # keepassxc
     obsidian
-    obs-studio
-    signal-desktop
+    # obs-studio
+    # signal-desktop
   ];
 }
