@@ -43,6 +43,28 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # TODO: Extract most common packages into a module
+  home.packages = with pkgs; [
+    wl-clipboard
+    bc
+    curl
+    wget
+    unzip
+    imagemagick
+    terraform # TODO: Move to project specific
+    awscli2
+    ssm-session-manager-plugin
+    httpie
+    jq
+    trash-cli
+    nodePackages.pnpm
+    gnumake
+    gcc
+    flyctl # TODO: Move to project specific
+    supabase-cli # TODO: Move to project specific
+    bitwarden
+  ];
+
   # Enable the KDE Connect service
   services.kdeconnect = {
     enable = true;
