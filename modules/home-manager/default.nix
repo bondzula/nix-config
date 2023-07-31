@@ -21,4 +21,9 @@
   zellij = import ./zellij;
   zoxide = import ./zoxide.nix;
   zsh = import ./zsh.nix;
+  wezterm = import ./wezterm;
+  chromium = import ./chromium.nix;
+  firefox = import ./firefox.nix;
+  foot = import ./foot.nix;
+  mpv = import ./mpv.nix;
 }

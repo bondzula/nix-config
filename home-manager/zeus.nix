@@ -42,4 +42,10 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Enable the KDE Connect service
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 }

@@ -40,4 +40,28 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    wl-clipboard
+    bc
+    curl
+    wget
+    unzip
+    imagemagick
+    terraform # TODO: Move to project specific
+    awscli2
+    ssm-session-manager-plugin
+    httpie
+    jq
+    trash-cli
+    nodePackages.pnpm
+    gnumake
+    gcc
+    flyctl # TODO: Move to project specific
+    supabase-cli # TODO: Move to project specific
+    bitwarden
+    firefox
+
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+  ];
 }

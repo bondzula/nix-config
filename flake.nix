@@ -34,7 +34,7 @@
 
     # Home Manager configurations
     homeConfigurations = {
-      "bondzula@zeus" = home-manager.lib.homeManagerConfiguration {
+      "bondzula" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
