@@ -1,4 +1,2 @@
 # User configuration for ssh
-{
-
-}
+{ }
