@@ -12,9 +12,9 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      "G14" = nixpkgs.lib.nixosSystem {
+      "zeus" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        modules = [ ./nixos/G14 ];
+        modules = [ ./nixos/zeus ];
       };
       "apollo" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -23,6 +23,15 @@
     };
 
     homeConfigurations = {
+      "bondzula@zeus" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home-manager/zeus.nix ];
+      };
+
       "bondzula@apollo" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
@@ -30,15 +39,6 @@
         };
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home-manager/apollo.nix ];
-      };
-
-      "bondzula" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home-manager/g14.nix ];
       };
     };
   };
