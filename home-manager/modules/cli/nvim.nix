@@ -46,7 +46,7 @@
 
   # Set default editor to be nvim
   home.sessionVariables = {
-    EDITOR = "nvim";
-    SUDO_EDITOR = "/home/bondzula/.nix-profile/bin/nvim";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
+    SUDO_EDITOR = "${pkgs.neovim}/bin/nvim";
   };
 }
