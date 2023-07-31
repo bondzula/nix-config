@@ -33,13 +33,6 @@
       export FLYCTL_INSTALL="/home/bondzula/.fly"
       path+=('/home/bondzula/.fly/bin')
 
-      # Setup cargo
-      path+=('/home/bondzula/.cargo/bin')
-
-      # fnm
-      path+=("/home/bondzula/.local/share/fnm")
-      eval "`fnm env`"
-
       # Export path
       export PATH
     '';
