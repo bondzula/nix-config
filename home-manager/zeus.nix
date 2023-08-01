@@ -16,28 +16,8 @@
   home.stateVersion = "23.05";
 
   imports = [
-    outputs.hmModules.atuin
-    outputs.hmModules.bat
-    outputs.hmModules.btop
-    outputs.hmModules.direnv
-    outputs.hmModules.exa
-    outputs.hmModules.fd
-    outputs.hmModules.fzf
-    outputs.hmModules.gh
-    outputs.hmModules.git
-    outputs.hmModules.gnupg
-    outputs.hmModules.lazygit
-    outputs.hmModules.lf
-    outputs.hmModules.nvim
+    outputs.hmModules.console
     outputs.hmModules.php
-    outputs.hmModules.ripgrep
-    outputs.hmModules.ssh
-    outputs.hmModules.starship
-    outputs.hmModules.tmux
-    outputs.hmModules.yt-dlp
-    outputs.hmModules.zellij
-    outputs.hmModules.zoxide
-    outputs.hmModules.zsh
   ];
 
   # Let Home Manager install and manage itself.
@@ -46,20 +26,10 @@
   # TODO: Extract most common packages into a module
   home.packages = with pkgs; [
     wl-clipboard
-    bc
-    curl
-    wget
-    unzip
-    imagemagick
     terraform # TODO: Move to project specific
     awscli2
     ssm-session-manager-plugin
-    httpie
-    jq
-    trash-cli
     nodePackages.pnpm
-    gnumake
-    gcc
     flyctl # TODO: Move to project specific
     supabase-cli # TODO: Move to project specific
     bitwarden
