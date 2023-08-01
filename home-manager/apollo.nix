@@ -62,6 +62,7 @@
     flyctl # TODO: Move to project specific
     supabase-cli # TODO: Move to project specific
     bitwarden
+    logseq
   ];
 
   # Set default browser
