@@ -33,7 +33,7 @@
     gping # Modern Unix `ping`
     httpie # Modern curl
     hyperfine # Terminal benchmarking
-    magic-wormhole-rs
+    magic-wormhole
     moar # Modern Unix `less`
     neofetch # Terminal system info
     procs # Modern Unix `ps`
