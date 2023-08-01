@@ -1,4 +1,6 @@
 {
+  description = "Bondzula's NixOS configuration";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:NixOS/nixos-hardware/master";
