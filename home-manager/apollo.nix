@@ -25,6 +25,7 @@
     outputs.hmModules.fd
     outputs.hmModules.firefox
     outputs.hmModules.fonts
+    outputs.hmModules.foot
     outputs.hmModules.fzf
     outputs.hmModules.gh
     outputs.hmModules.git
