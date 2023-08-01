@@ -10,9 +10,16 @@
     withRuby = false;
 
     extraPackages = with pkgs; [
+      # Build tools
+      pkg-config
+      clang
+      gcc
+      cmake
+      gnumake
+      ninja
+
       unzip
       wget
-      gcc
       wl-clipboard
 
       tree-sitter
