@@ -3,6 +3,7 @@
   bat = import ./bat;
   btop = import ./btop.nix;
   chromium = import ./chromium.nix;
+  console = import ./console.nix;
   direnv = import ./direnv.nix;
   exa = import ./exa.nix;
   fd = import ./fd.nix;

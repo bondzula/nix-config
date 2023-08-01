@@ -16,33 +16,17 @@
   home.stateVersion = "23.05";
 
   imports = [
-    outputs.hmModules.atuin
-    outputs.hmModules.bat
-    outputs.hmModules.btop
     outputs.hmModules.chromium
-    outputs.hmModules.direnv
-    outputs.hmModules.exa
-    outputs.hmModules.fd
     outputs.hmModules.firefox
     outputs.hmModules.fonts
     outputs.hmModules.foot
-    outputs.hmModules.fzf
-    outputs.hmModules.gh
-    outputs.hmModules.git
-    outputs.hmModules.gnupg
-    outputs.hmModules.nvim
-    outputs.hmModules.ripgrep
-    outputs.hmModules.ssh
-    outputs.hmModules.starship
-    outputs.hmModules.yt-dlp
-    outputs.hmModules.zellij
-    outputs.hmModules.zoxide
-    outputs.hmModules.zsh
+    outputs.hmModules.console
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # One of packages for this host
   home.packages = with pkgs; [
     wl-clipboard
     terraform # TODO: Move to project specific
@@ -53,27 +37,6 @@
     supabase-cli # TODO: Move to project specific
     bitwarden
     logseq
-
-    # Console
-    asciinema # Terminal recorder
-    difftastic # Modern Unix `diff`
-    dua # Modern Unix `du`
-    duf # Modern Unix `df`
-    du-dust # Modern Unix `du`
-    fd # Modern Unix `find`
-    glow # Terminal Markdown renderer
-    gping # Modern Unix `ping`
-    hyperfine # Terminal benchmarking
-    moar # Modern Unix `less`
-    neofetch # Terminal system info
-    procs # Modern Unix `ps`
-    tldr # Modern Unix `man`
-    tokei # Modern Unix `wc` for code
-    curl
-    httpie # Modern curl
-    wget
-    unzip
-    trash-cli
   ];
 
   # Set default browser
