@@ -2,9 +2,9 @@
 
 # CLI Packages used on every system
 {
-  import = [
+  imports = [
     ./atuin.nix
-    ./bat.nix
+    ./bat
     ./btop.nix
     ./direnv.nix
     ./exa.nix
@@ -44,3 +44,4 @@
     wget
   ];
 }
+
