@@ -23,23 +23,24 @@
 
   home.packages = with pkgs; [
     asciinema # Terminal recorder
+    curl
     difftastic # Modern Unix `diff`
     dua # Modern Unix `du`
-    duf # Modern Unix `df`
     du-dust # Modern Unix `du`
+    duf # Modern Unix `df`
     fd # Modern Unix `find`
     glow # Terminal Markdown renderer
     gping # Modern Unix `ping`
+    httpie # Modern curl
     hyperfine # Terminal benchmarking
+    magic-wormhole-rs
     moar # Modern Unix `less`
     neofetch # Terminal system info
     procs # Modern Unix `ps`
     tldr # Modern Unix `man`
     tokei # Modern Unix `wc` for code
-    curl
-    httpie # Modern curl
-    wget
-    unzip
     trash-cli
+    unzip
+    wget
   ];
 }
