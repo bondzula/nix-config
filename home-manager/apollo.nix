@@ -17,10 +17,10 @@
 
   imports = [
     outputs.hmModules.chromium
+    outputs.hmModules.console
     outputs.hmModules.firefox
     outputs.hmModules.fonts
     outputs.hmModules.foot
-    outputs.hmModules.console
   ];
 
   # Let Home Manager install and manage itself.

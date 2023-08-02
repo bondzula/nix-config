@@ -31,6 +31,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./nixos/zeus ];
         };
+
         "apollo" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./nixos/apollo ];
