@@ -15,10 +15,15 @@
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       inherit (self) outputs;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       # Set project formatter
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      formatter.${system} = pkgs.nixpkgs-fmt;
 
       # Reusable nixos modules
       nixosModules = import ./modules/nixos;
@@ -41,19 +46,13 @@
       # Home Manager configurations
       homeConfigurations = {
         "bondzula" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/zeus.nix ];
         };
 
         "bondzula@apollo" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home-manager/apollo.nix ];
         };
