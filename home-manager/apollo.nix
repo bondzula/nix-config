@@ -36,7 +36,6 @@
     terraform # TODO: Move to project specific
     awscli2
     ssm-session-manager-plugin
-    nodePackages.pnpm
     flyctl # TODO: Move to project specific
     supabase-cli # TODO: Move to project specific
     bitwarden
