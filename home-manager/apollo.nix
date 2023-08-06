@@ -25,6 +25,7 @@
     outputs.hmModules.firefox
     outputs.hmModules.fonts
     outputs.hmModules.foot
+    outputs.hmModules.hyprland
   ];
 
   # Let Home Manager install and manage itself.

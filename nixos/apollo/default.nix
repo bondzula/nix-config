@@ -45,7 +45,11 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -85,7 +89,9 @@
   services.dbus.enable = true;
 
   # Enable Wayland portals (for screen sharing)
-  xdg.portal = { enable = true; };
+  xdg.portal = {
+    enable = true;
+  };
 
   # Enable zsh
   programs.zsh.enable = true;
@@ -95,7 +101,7 @@
     isNormalUser = true;
     description = "Stefan Bondzulic";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = [ ];
     shell = pkgs.zsh;
   };
 

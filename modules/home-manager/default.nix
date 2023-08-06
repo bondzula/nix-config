@@ -14,6 +14,7 @@
   gh = import ./gh.nix;
   git = import ./git.nix;
   gnupg = import ./gnupg.nix;
+  hyprland = import ./hyprland.nix;
   lazygit = import ./lazygit.nix;
   lf = import ./lf;
   mpv = import ./mpv.nix;
