@@ -12,7 +12,6 @@
     extraPackages = with pkgs; [
       # Build tools
       pkg-config
-      clang
       gcc
       cmake
       gnumake
