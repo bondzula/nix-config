@@ -58,6 +58,7 @@
   # Set default editor to be nvim
   home.sessionVariables = {
     EDITOR = "${pkgs.neovim}/bin/nvim";
+    VISUAL = "${pkgs.neovim}/bin/nvim";
     SUDO_EDITOR = "${pkgs.neovim}/bin/nvim";
   };
 }
