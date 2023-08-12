@@ -8,7 +8,6 @@
 
     extraConfig = {
       init.defaultBranch = "main";
-      core.editor = "nvim";
       featch.prune = true;
       pull.rebase = true;
       merge.conflictstyle = "diff3";
@@ -20,7 +19,6 @@
   programs.gh = {
     enable = true;
     settings = {
-      editor = "nvim";
       git_protocol = "ssh";
     };
   };
