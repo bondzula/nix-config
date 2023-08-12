@@ -15,9 +15,6 @@
   # release notes.
   home.stateVersion = "23.05";
 
-  # Allow unfree software
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
-
   # Import existing modules
   imports = [
     outputs.hmModules.console

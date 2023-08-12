@@ -1,5 +1,5 @@
 # User configuration for firefox
-{ pkgs, ... }:
+_:
 
 {
   programs.firefox = {

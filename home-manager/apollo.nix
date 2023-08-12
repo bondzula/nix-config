@@ -1,4 +1,4 @@
-{ pkgs, outputs, config, ... }:
+{ pkgs, outputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -14,9 +14,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.05";
-
-  # Allow unfree software
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   # Import existing modules
   imports = [
