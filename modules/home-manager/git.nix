@@ -16,6 +16,15 @@
     };
   };
 
+  # Enable GitHub CLI as well
+  programs.gh = {
+    enable = true;
+    settings = {
+      editor = "nvim";
+      git_protocol = "ssh";
+    };
+  };
+
   home.packages = with pkgs; [
     difftastic
   ];

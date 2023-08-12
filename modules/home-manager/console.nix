@@ -10,7 +10,6 @@
     ./exa.nix
     ./fd.nix
     ./fzf.nix
-    ./gh.nix
     ./git.nix
     ./nvim.nix
     ./ripgrep.nix

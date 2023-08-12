@@ -11,7 +11,6 @@
   fonts = import ./fonts.nix;
   foot = import ./foot.nix;
   fzf = import ./fzf.nix;
-  gh = import ./gh.nix;
   git = import ./git.nix;
   gnupg = import ./gnupg.nix;
   hyprland = import ./hyprland.nix;
