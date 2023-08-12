@@ -6,6 +6,9 @@
     userName = "Stefan Bondzulic";
     userEmail = "stefanbondzulic@gmail.com";
 
+    aliases = {
+      lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches";
+    };
     extraConfig = {
       init.defaultBranch = "main";
       featch.prune = true;
