@@ -20,6 +20,7 @@
       unzip
       wget
       wl-clipboard
+      nodePackages.cspell
 
       tree-sitter
       languagetool-rust
@@ -39,6 +40,10 @@
       php82Packages.composer
       php82Packages.phpstan
 
+      # Python
+      black
+      ruff
+
       # Rust
       cargo
       rustc
@@ -47,6 +52,7 @@
       go
       gofumpt
       golines
+      goimports-reviser
 
       # Nix
       deadnix
