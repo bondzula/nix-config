@@ -12,7 +12,7 @@ _:
     customPaneNavigationAndResize = true;
     disableConfirmationPrompt = true;
     extraConfig = ''
-      set -g detach-on-destroy off  # don't exit from tmux when closing a session 
+      set -g detach-on-destroy off  # don't exit from tmux when closing a session
       set -g history-limit 1000000  # significantly increase history size
       set -g renumber-windows on    # renumber all windows when any window is closed
       set -g set-clipboard on       # use system clipboard
