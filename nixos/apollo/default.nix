@@ -18,6 +18,8 @@
     };
   };
 
+  # Disable mitigations, PC goes brrrr..
+  boot.kernelParams = ["mitigations=off"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader.
