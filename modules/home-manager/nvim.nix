@@ -50,14 +50,31 @@
 
       # Go
       go
+      gopls
       gofumpt
       golines
       goimports-reviser
 
       # Nix
+      nil
       deadnix
       nixfmt
       statix
+
+      nodePackages.dockerfile-language-server-nodejs
+      nodePackages.bash-language-server
+      nodePackages.vscode-css-languageserver-bin
+      nodePackages.vscode-html-languageserver-bin
+      nodePackages.intelephense
+      nodePackages_latest.vscode-json-languageserver
+      lua-language-server
+      marksman
+      python311Packages.python-lsp-server
+      rust-analyzer
+      nodePackages.svelte-language-server
+      nodePackages."@tailwindcss/language-server"
+      terraform-ls
+      nodePackages.volar
     ];
   };
 
