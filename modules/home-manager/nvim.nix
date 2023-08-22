@@ -63,6 +63,9 @@
       nixfmt
       statix
 
+      # Shell
+      shfmt
+
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.bash-language-server
       nodePackages.vscode-css-languageserver-bin
