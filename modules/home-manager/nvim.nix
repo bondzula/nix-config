@@ -29,6 +29,7 @@
       nodejs
       nodePackages.npm
       nodePackages.typescript
+      nodePackages.eslint_d
 
       # Lua
       lua5_4_compat
