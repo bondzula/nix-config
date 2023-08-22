@@ -30,6 +30,7 @@
       nodePackages.npm
       nodePackages.typescript
       nodePackages.eslint_d
+      prettierd
 
       # Lua
       lua5_4_compat
