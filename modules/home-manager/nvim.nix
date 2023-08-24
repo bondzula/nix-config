@@ -71,7 +71,7 @@
       nodePackages.vscode-css-languageserver-bin
       nodePackages.vscode-html-languageserver-bin
       nodePackages.intelephense
-      nodePackages_latest.vscode-json-languageserver
+      nodePackages.vscode-json-languageserver
       lua-language-server
       marksman
       python311Packages.python-lsp-server
