@@ -13,6 +13,9 @@
         format = "via [$symbol $state](bold blue)";
       };
 
+      # Disable the container indicator
+      container = { disabled = true; };
+
       # Disable git modules
       git_branch = { disabled = true; };
       git_commit = { disabled = true; };
