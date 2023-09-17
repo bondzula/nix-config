@@ -68,10 +68,9 @@
 
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.bash-language-server
-      nodePackages.vscode-css-languageserver-bin
-      nodePackages.vscode-html-languageserver-bin
       nodePackages.intelephense
-      nodePackages.vscode-json-languageserver
+      nodePackages.vscode-langservers-extracted
+      nodePackages.jsonlint
       lua-language-server
       marksman
       python311Packages.python-lsp-server

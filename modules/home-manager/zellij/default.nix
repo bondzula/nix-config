@@ -1,6 +1,7 @@
 {
   programs.zellij = {
     enable = true;
+    enableZshIntegration = false;
   };
 
   # config file

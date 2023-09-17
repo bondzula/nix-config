@@ -20,7 +20,7 @@
 
     initExtraFirst = ''
       # Check if nix profile exists, and if it does, load it
-      if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi 
+      if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi
     '';
 
     initExtra = ''
@@ -32,6 +32,8 @@
       # setup fly.io
       export FLYCTL_INSTALL="/home/bondzula/.fly"
       path+=('/home/bondzula/.fly/bin')
+
+      path+=('/home/bondzula/.local/bin')
 
       # Export path
       export PATH

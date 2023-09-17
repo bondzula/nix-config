@@ -34,6 +34,10 @@
     flyctl # TODO: Move to project specific
     supabase-cli # TODO: Move to project specific
     bitwarden
+    pipenv
+    immich-cli
+    python311Packages.python-lsp-server
+    ffmpeg_6
   ];
 
   # Enable the KDE Connect service

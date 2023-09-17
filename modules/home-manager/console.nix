@@ -7,7 +7,7 @@
     ./bat
     ./btop.nix
     ./direnv.nix
-    ./exa.nix
+    # ./exa.nix
     ./fd.nix
     ./fzf.nix
     ./git.nix
@@ -43,4 +43,3 @@
     wget
   ];
 }
-
