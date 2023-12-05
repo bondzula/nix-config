@@ -9,12 +9,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, mac-app-util, ... } @ inputs:
     let
       inherit (self) outputs;
-      system = "x86_64-linux";
+      system = "aarch64-darwin";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -50,10 +52,13 @@
           modules = [ ./home-manager/zeus.nix ];
         };
 
-        "bondzula@apollo" = home-manager.lib.homeManagerConfiguration {
+        "stefanbondzulic" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home-manager/apollo.nix ];
+          modules = [
+            mac-app-util.homeManagerModules.default
+            ./home-manager/macos.nix
+          ];
         };
       };
     };

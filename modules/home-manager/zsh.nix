@@ -21,6 +21,9 @@
     initExtraFirst = ''
       # Check if nix profile exists, and if it does, load it
       if [ -e /home/bondzula/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bondzula/.nix-profile/etc/profile.d/nix.sh; fi
+
+      # Darvin version
+      if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh; fi
     '';
 
     initExtra = ''

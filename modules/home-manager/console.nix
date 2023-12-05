@@ -7,7 +7,6 @@
     ./bat
     ./btop.nix
     ./direnv.nix
-    # ./exa.nix
     ./fd.nix
     ./fzf.nix
     ./git.nix
@@ -23,6 +22,7 @@
   home.packages = with pkgs; [
     asciinema # Terminal recorder
     curl
+    eza
     difftastic # Modern Unix `diff`
     dua # Modern Unix `du`
     du-dust # Modern Unix `du`
