@@ -18,7 +18,7 @@
   # Import existing modules
   imports = [
     outputs.hmModules.console
-    outputs.hmModules.wezterm
+    # outputs.hmModules.wezterm
     outputs.hmModules.php
   ];
 
@@ -26,9 +26,12 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    discord
     fnm
-    raycast
-    obsidian
+    mariadb
+    awscli2
+    terraform
+    jq
+    ssm-session-manager-plugin
+    lazygit
   ];
 }
