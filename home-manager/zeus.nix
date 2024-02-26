@@ -17,8 +17,9 @@
 
   # Import existing modules
   imports = [
-    outputs.hmModules.console
-    outputs.hmModules.php
+    outputs.hmModules.nvim
+    # outputs.hmModules.console
+    # outputs.hmModules.php
   ];
 
   # Let Home Manager install and manage itself.
@@ -26,23 +27,23 @@
 
   # TODO: Extract most common packages into a module
   home.packages = with pkgs; [
-    wl-clipboard
-    terraform # TODO: Move to project specific
-    awscli2
-    ssm-session-manager-plugin
-    nodePackages.pnpm
-    flyctl # TODO: Move to project specific
-    supabase-cli # TODO: Move to project specific
-    bitwarden
-    pipenv
-    immich-cli
-    python311Packages.python-lsp-server
-    ffmpeg_6
+    # wl-clipboard
+    # terraform # TODO: Move to project specific
+    # awscli2
+    # ssm-session-manager-plugin
+    # nodePackages.pnpm
+    # flyctl # TODO: Move to project specific
+    # supabase-cli # TODO: Move to project specific
+    # bitwarden
+    # pipenv
+    # immich-cli
+    # python311Packages.python-lsp-server
+    # ffmpeg_6
   ];
 
   # Enable the KDE Connect service
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
+  # services.kdeconnect = {
+  #   enable = true;
+  #   indicator = true;
+  # };
 }
