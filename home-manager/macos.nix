@@ -24,15 +24,18 @@
       jq
       ssm-session-manager-plugin
       lazygit
-      yazi
+      go
+      air
+      cachix
     ];
   };
 
   # Import existing modules
   imports = [
     outputs.hmModules.console
-    # outputs.hmModules.wezterm
+    outputs.hmModules.wezterm
     outputs.hmModules.php
+    outputs.hmModules.tmux
   ];
 
   # Let Home Manager install and manage itself.

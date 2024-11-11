@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:NixOS/nixos-hardware/master";
 
+    devenv.url = "github:cachix/devenv";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,11 +54,12 @@
           modules = [ ./home-manager/zeus.nix ];
         };
 
-        "stefanbondzulic" = home-manager.lib.homeManagerConfiguration {
+        "stefanbondzulic@hydrogen" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             mac-app-util.homeManagerModules.default
+            inputs.devenv.flakeModule
             ./home-manager/macos.nix
           ];
         };

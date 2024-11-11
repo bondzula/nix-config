@@ -23,14 +23,15 @@
       nodePackages.cspell
 
       tree-sitter
-      languagetool-rust
+      ltex-ls
+      nodePackages.cspell
 
       # Node
       nodejs
       nodePackages.npm
       nodePackages.typescript
       nodePackages.eslint_d
-      prettierd
+      nodePackages.prettier
 
       # Lua
       lua5_4_compat
@@ -41,6 +42,8 @@
       php82
       php82Packages.composer
       php82Packages.phpstan
+      php82Packages.php-cs-fixer
+      nodePackages.intelephense
 
       # Python
       black
@@ -68,7 +71,6 @@
 
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.bash-language-server
-      nodePackages.intelephense
       nodePackages.vscode-langservers-extracted
       nodePackages.jsonlint
       lua-language-server
@@ -79,6 +81,11 @@
       nodePackages."@tailwindcss/language-server"
       terraform-ls
       nodePackages.volar
+      yaml-language-server
+      sqls
+      hadolint
+      commitlint
+      dotenv-linter
     ];
   };
 

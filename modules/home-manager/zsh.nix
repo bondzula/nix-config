@@ -30,8 +30,11 @@
       # Setup NODE
       eval "$(fnm env --use-on-cd)" # Load node manager
       path+=('/home/bondzula/.npm-packages/bin')
+
       export NODE_PATH="~/.npm-packages/lib/node_modules"
-      # export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/
+
+      # Setup brew
+      eval "$(/opt/homebrew/bin/brew shellenv)"
 
       # setup fly.io
       export FLYCTL_INSTALL="/home/bondzula/.fly"
